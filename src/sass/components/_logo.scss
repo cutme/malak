@@ -1,0 +1,14 @@
+.c-logo {
+	display: block;
+
+	.c-top & {
+		@extend %middle;
+		left: $padding+px; 
+		width: 110px;
+	}
+	
+	.c-overlay & {
+		width: 180px;
+		margin-bottom: 50px;
+	}
+}

@@ -1,0 +1,21 @@
+.o-form {
+	max-width: 375px;
+	
+	input, textarea {
+		border: 1px solid rgba(white, .2);
+		padding: 10px 20px;
+	}
+	
+	textarea {
+		height: 160px;
+	}
+	
+	&__row {
+		@extend %clear;
+		margin-bottom: 20px;
+	}
+	
+	.o-btn {
+		float: right;
+	}
+}

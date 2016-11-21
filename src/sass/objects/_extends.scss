@@ -1,0 +1,101 @@
+%abs {
+	position: absolute;
+	z-index: 5;
+}
+
+%abs-after {
+	@extend %abs;
+	display: block;
+	content: ' ';
+}
+
+%anim {
+	@include transition-property(all);
+	@include transition-duration(200ms);
+	@include transition-timing-function(ease-in-out);
+}
+
+%animfix {
+	-webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+}
+
+%center-middle {
+	@extend %abs;
+	left: 50%; top: 50%;
+	transform: (translateX(-50%) translateY(-50%));
+}
+
+%clear {
+	clear: both;
+	
+	&:after {
+		clear: both;
+		display: block;
+		content: '';
+	}
+}
+
+%icon {
+	display: block;
+	width: 40px;
+	height: 40px;
+	border: 1px solid $c-gray--darker;
+	text-align: center;
+	line-height: 38px;
+	font-size: em(42);
+	color: $c-gray;
+	
+	&:hover {
+		color: $c-gray--bright;
+	}
+}
+
+%loading {
+	@extend %center-middle;
+	z-index: 20;
+	width: 50px;
+	height: 50px;
+	background-image: url(../img/ring.svg);
+	background-size: cover;
+	display: block;
+	content: ' ';
+}
+
+%middle {
+	@extend %abs;
+	transform: translateY(-50%);
+	top: 50%;
+}
+
+%rel {
+	position: relative;
+	z-index: 5;
+}
+
+%antialias {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+%underline {
+	
+	display: inline-block;
+	position: relative;
+
+	&:after {
+		@extend %anim;
+		@extend %abs-after;
+		left: 0; bottom: -5px;
+		width: 0; height: 1px;
+		background-color: #888;
+	}
+	
+	&:hover {
+		&:after {
+			width: 100%;
+		}
+	}	
+}

@@ -1,0 +1,27 @@
+
+.c-nav {
+	float: left;
+	width: 425px;
+	padding-left: 50px;
+	
+	&__item {
+		margin-bottom: 33px;		
+	}
+	
+	&__link {
+		@extend %animfix;
+		opacity: .3;
+		text-transform: uppercase;
+		font-size: em(26);	
+		
+		&.is-active {
+			opacity: 1;
+		}	
+		
+		&:hover {
+			opacity: 1;
+		}
+	}	
+}
+
+

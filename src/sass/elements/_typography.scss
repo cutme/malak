@@ -1,0 +1,32 @@
+body {
+	@include antialias;
+	line-height: 1.2;
+	letter-spacing: 2px;
+	text-rendering: optimizeSpeed;
+	
+	font: {
+		family: $text;
+		size: #{$base-font-size}px;
+		weight: $regular;
+	}
+	color: white;
+}
+
+a {
+	@extend %anim;
+	color: inherit;
+	cursor: pointer;
+	text-decoration: none;
+	
+	&:hover,
+    &:active,
+    &:focus {
+        color: inherit;
+        outline: none;
+    }
+}
+
+strong {
+	font-weight: $bold;
+}
+

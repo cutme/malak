@@ -1,0 +1,44 @@
+[class^="icon-"], [class*=" icon-"] {
+	@include icomoon;
+	
+	&:before {
+		position: relative;
+		left: -1px;
+	}
+}
+
+.is-hidden {
+	opacity: 0;
+	visibility: hidden;
+	width: 0; height: 0;
+	overflow: hidden;
+
+}
+.no-scroll {
+	overflow: hidden;
+}
+
+.safari {
+	* {
+		-webkit-backface-visibility: hidden;
+		-webkit-transform-style: preserve-3d;
+	}
+}
+
+/* IE */
+
+@media screen and (max-width:400px) {
+    @-ms-viewport{
+        width:320px;
+    }
+}
+
+.owl-carousel .owl-item img {
+	width: inherit;
+}
+
+@-webkit-viewport{width:device-width}
+@-moz-viewport{width:device-width}
+@-ms-viewport{width:device-width}
+@-o-viewport{width:device-width}
+@viewport{width:device-width}

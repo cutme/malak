@@ -1,0 +1,74 @@
+/* Move Up */
+
+.anim {
+.effect-2 li {
+	opacity: 0;
+}
+.effect-2 li.animate,
+.effect-2 li.shown {
+	-webkit-transform: translateY(200px);
+	transform: translateY(200px);
+	-webkit-animation: moveUp 0.65s ease forwards;
+	animation: moveUp 0.65s ease forwards;
+}
+
+}
+
+@keyframes effect-1 {
+	0% {
+		@include opacity(0);
+		@include transform(translateY(-20px));
+	}
+
+	100% {
+		@include opacity(1);
+		@include transform(translateY(0));
+	}
+}
+
+@keyframes effect-3 {
+	0% {
+		@include opacity(0);
+		@include transform(translateY(200px));
+	}
+
+	100% {
+		@include opacity(1);
+		@include transform(translateY(0));
+	}
+}
+
+.effect-1.is-visible {
+	display: block;
+	-webkit-animation: effect-1 .4s;
+       -moz-animation: effect-1 .4s;
+        -ms-animation: effect-1 .4s;
+         -o-animation: effect-1 .4s;
+            animation: effect-1 .4s;
+}
+
+.effect-2.is-visible {
+	display: block;
+	-webkit-transform: translateY(200px);
+	transform: translateY(200px);
+	-webkit-animation: moveUp 0.65s ease forwards;
+	animation: moveUp 0.65s ease forwards;
+}
+
+.effect-3.is-visible {
+	display: block;
+	-webkit-transform: translateY(-200px);
+	transform: translateY(-200px);
+	-webkit-animation: effect-3 1s ease forwards;
+	animation: effect-3 1s ease forwards;
+}
+
+@-webkit-keyframes moveUp {
+	0% { }
+	100% { -webkit-transform: translateY(0); opacity: 1; }
+}
+
+@keyframes moveUp {
+	0% { }
+	100% { -webkit-transform: translateY(0); transform: translateY(0); opacity: 1; }
+}

@@ -1,0 +1,18 @@
+.o-list {
+	line-height: 1.5;
+	li {
+		position: relative;
+		margin-bottom: 20px;
+		letter-spacing: normal;
+	}
+	
+	&--awards {
+		text-transform: uppercase;
+		
+		.date {
+			position: absolute;
+			left: -52px;
+			color: white;
+		}
+	}
+}

@@ -1,0 +1,31 @@
+{
+  "name": "malak",
+  "description": "",
+  "main": "gulpfile.js",
+  "authors": [
+    "bartosz mediger (cutme.pl)"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "modernizr.custom": "./src/assets/js/modernizr.custom.js",
+    "jquery": "~2.2.0",
+    "jquery.easing": "^1.3.1",
+    "owl.carousel": "^2.1.6",
+    "froogaloop": "^1.0.0",
+    "jquery.vimelar": "./src/js/jquery.vimelar.js",
+    "inview": "*",
+    "classie": "^1.0.1",
+    "imagesloaded": "^4.1.1",
+    "AnimOnScroll": "./src/assets/js/AnimOnScroll.js",
+    "masonry.pkgd.min": "./src/assets/js/masonry.pkgd.min.js",
+    "multipleFilterMasonry": "./src/assets/js/multipleFilterMasonry.js"
+  }
+}

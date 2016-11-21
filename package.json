@@ -1,0 +1,14 @@
+{
+  "name": "malak",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "cutme.pl",
+  "license": "ISC",
+  "dependencies": {
+    "newer": "^0.1.5"
+  }
+}

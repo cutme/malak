@@ -1,0 +1,22 @@
+.c-thumb {
+	cursor: pointer;
+
+	p {
+		margin-bottom: 5px;
+	}
+	
+	&__categories {
+		color: #888;
+	}
+	
+	.o-media {
+		@extend %anim;
+		margin-bottom: 10px;
+	}
+	
+	&:hover {
+		.o-media {
+			opacity: .8;
+		}
+	}
+}

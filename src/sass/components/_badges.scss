@@ -1,0 +1,10 @@
+.c-badges {
+	@extend %rel;
+	height: 100px;
+	box-shadow: $c-gray--darkest 0 0 0 2px;
+	
+	.icon-arrow_down {
+		@extend %center-middle;
+		@extend %icon;
+	}
+}

@@ -1,0 +1,22 @@
+.c-toolbar {
+	@extend %middle;
+	right: $padding+px;
+	
+	li {
+		float: left;
+		margin-left: -1px;
+	}
+	
+	a {
+		@extend %icon;
+	}
+	
+	&__nav {
+		margin-right: 25px;
+	}
+	
+	&__nav,
+	&__params {
+		float: left;
+	}
+}

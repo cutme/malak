@@ -1,0 +1,18 @@
+$thumbs__width:	1266;
+
+.c-thumbs {
+	@extend %clear;
+	max-width: $thumbs__width+px;
+	margin: 0 auto;
+
+	&__item {
+		width: 422px;
+		margin-bottom: 30px;
+		padding-left: 15px;
+		padding-right: 15px;
+		
+		.anim & {
+			opacity: 0;
+		}
+	}
+}

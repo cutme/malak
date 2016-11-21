@@ -1,0 +1,23 @@
+.c-addresses {
+	letter-spacing: 1px;
+	line-height: 1.5;
+	
+	h5 {
+		margin-bottom: 10px;
+		text-transform: uppercase;
+		color: white;
+	}
+	
+	address {
+		margin-bottom: 30px;
+
+		p {
+			color: #888;
+			
+		}
+		
+		a {
+			@extend %underline;			
+		}
+	}
+}

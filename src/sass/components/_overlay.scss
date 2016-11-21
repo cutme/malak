@@ -1,0 +1,46 @@
+.c-overlay {
+	display: none;
+	opacity: 0;
+	position: fixed;
+	left: 0; top: 0; z-index: 100;
+	width: 100%; height: 100%;
+	background-color: rgba(0,0,0,.92);
+
+	&__content {
+		float: left;
+		width: 916px;
+		padding-top: 80px;
+	}
+	
+	&__exit {
+		@extend %abs;
+		@extend %icon;
+		right: 30px; top: 30px;
+		line-height: 37px !important;
+		color: white !important;
+	}
+
+	&__main {
+		@extend %center-middle;
+		position: relative;
+		width: $grid-base-width+px;
+		min-height: 500px;
+		padding-left: 90px;
+		padding-right: 90px;
+
+		&:after {
+			@extend %abs-after;
+			left: 360px; top: 0;
+			width: 1px; height: 100%;
+			background-color: rgba(white, .1);
+		}
+	}
+
+	&__sidebar {
+		float: left;
+		width: 270px;
+		position: relative;
+	}
+}
+
+

@@ -1,0 +1,20 @@
+.c-social {
+
+	.c-badges & {
+		@extend %middle;
+		left: $padding+px;
+	}
+	
+	.o-form {
+		float: left;
+	}
+	
+	li {
+		float: left;
+		margin-right: -1px;
+	}
+	
+	a {
+		@extend %icon;
+	}
+}

@@ -1,0 +1,36 @@
+.c-menu {
+	@extend %middle;
+	right: $padding+px;
+	cursor: pointer;
+
+	&__trigger {
+		cursor: pointer;
+		
+		li {
+			float: left;
+			margin-left: -1px;
+		}
+		
+		span {
+			@extend %icon;
+			@extend %anim;
+			color: $c-gray--bright !important;
+			
+			&.label {
+				width: auto;
+				padding: 0 20px;
+				text-transform: uppercase;
+				letter-spacing: 2px;
+				font-size: em(12);
+			}
+		}
+
+		&:hover {
+			
+			span {
+				border-color: $c-gray !important;
+				color: $c-gray--bright !important;
+			}
+		}
+	}
+}
