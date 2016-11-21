@@ -1,17 +1,16 @@
 /* Move Up */
 
 .anim {
-.effect-2 li {
-	opacity: 0;
-}
-.effect-2 li.animate,
-.effect-2 li.shown {
-	-webkit-transform: translateY(200px);
-	transform: translateY(200px);
-	-webkit-animation: moveUp 0.65s ease forwards;
-	animation: moveUp 0.65s ease forwards;
-}
-
+	.effect-2 li {
+		opacity: 0;
+	}
+	.effect-2 li.animate,
+	.effect-2 li.shown {
+		-webkit-transform: translateY(200px);
+		        transform: translateY(200px);
+		-webkit-animation: moveUp 0.65s ease forwards;
+		        animation: moveUp 0.65s ease forwards;
+	}
 }
 
 @keyframes effect-1 {
@@ -47,12 +46,13 @@
             animation: effect-1 .4s;
 }
 
-.effect-2.is-visible {
+.effect-2.is-visible,
+.c-overlay.is-visible {
 	display: block;
 	-webkit-transform: translateY(200px);
-	transform: translateY(200px);
+	        transform: translateY(200px);
 	-webkit-animation: moveUp 0.65s ease forwards;
-	animation: moveUp 0.65s ease forwards;
+	        animation: moveUp 0.65s ease forwards;
 }
 
 .effect-3.is-visible {
