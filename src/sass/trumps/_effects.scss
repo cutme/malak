@@ -6,8 +6,8 @@
 	}
 	.effect-2 li.animate,
 	.effect-2 li.shown {
-		-webkit-transform: translateY(200px);
-		        transform: translateY(200px);
+		-webkit-transform: translateY(100px);
+		        transform: translateY(100px);
 		-webkit-animation: moveUp 0.65s ease forwards;
 		        animation: moveUp 0.65s ease forwards;
 	}

@@ -78,7 +78,7 @@ gulp.task('sass', function()
 {
     return gulp.src('src/sass/**/*.scss')
       .pipe(sassGlob())
-      .pipe(sass({ importer: compass }).on('error', sass.logError))
+      .pipe(sass({ importer: compass }).on('error', notify.onError(function (error) { return sass.logError })))
       .pipe(autoprefixer({
         browsers: ['last 5 versions', 'safari 5', 'ie 8' ,'ie 9', 'ie 10', 'ie 11', 'opera 12.1', 'ios 6', 'ios 7', 'Android >= 2.1'],
             cascade: false,
