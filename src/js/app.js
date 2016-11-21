@@ -168,7 +168,7 @@ jQuery(function($) {
 				var $$ = $(this),
 					vimeoVideoID = $$.data('src'), videoTitle = $('.c-thumb__title', this), videoThumb = $('.o-media', this);
 
-				$.getJSON('http://www.vimeo.com/api/v2/video/' + vimeoVideoID + '.json?callback=?', {
+				$.getJSON('//www.vimeo.com/api/v2/video/' + vimeoVideoID + '.json?callback=?', {
 					format: "json"
 				}, 
 				function(data) {
