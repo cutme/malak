@@ -17,4 +17,10 @@
 	a {
 		@extend %icon;
 	}
+	
+	@media screen and ( max-width: $tablet--landscape + px ) {
+		.c-badges & {
+			left: 20px;
+		}
+	}
 }

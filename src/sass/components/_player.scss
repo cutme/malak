@@ -5,11 +5,12 @@
 	
 	&:after {
 		@extend %loading;
+		display: none;
 	}
 	
-	&.is-ready {
+	&.is-loading {
 		&:after {
-			display: none;
+			display: block;
 		}
 	}
 }

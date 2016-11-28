@@ -1,9 +1,18 @@
 .c-content {
-	float: left;
 	width: 490px;
 	color: #AFAFAF;
 	
 	&__item {
 		display: none;
+		margin-bottom: 30px;
+	}
+	
+	@media screen and ( min-width: $tablet--landscape + 1 +px ) and ( max-width: $grid-base-width+px ) {
+		float: left;
+		width: grid(490, 916);
+	}
+	
+	@media screen and ( max-width: $tablet--landscape +px ) {
+		width: 100%;
 	}
 }

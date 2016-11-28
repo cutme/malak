@@ -10,6 +10,16 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
+@mixin clear {
+	clear: both;
+	
+	&:after {
+		clear: both;
+		display: block;
+		content: '';
+	}
+}
+
 @mixin font-face-db( $font-name, $font-filename, $font-weight: normal ){
   @font-face {
     font-family: $font-name;

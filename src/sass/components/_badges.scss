@@ -7,4 +7,8 @@
 		@extend %center-middle;
 		@extend %icon;
 	}
+	
+	@media screen and ( max-width: $tablet--portrait+px ) {
+		display: none;
+	}
 }

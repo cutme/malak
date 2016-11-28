@@ -10,9 +10,16 @@
 		text-transform: uppercase;
 		
 		.date {
-			position: absolute;
-			left: -52px;
 			color: white;
+		}
+	}
+	
+	@media screen and ( min-width: $tablet--landscape + 1 + px ) {
+		&--awards {			
+			.date {
+				position: absolute;
+				left: -52px;
+			}
 		}
 	}
 }

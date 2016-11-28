@@ -1,0 +1,25 @@
+.parsley-errors-list {
+	opacity: 0;
+	
+	&.filled  {
+		transform: translateY(20px);
+		animation: moveUp 0.65s ease forwards;
+		position: absolute;
+		top: 45px;
+		background-color: white;
+		letter-spacing: 1px;
+		padding: 10px 15px;
+		color: black;
+
+		&:before {
+			@extend %abs-after;
+			left: 10px; top: -12px;
+		    display: inline-block;
+		    width: 0;
+		    height: 0;
+		    border-style: solid;
+		    border-width: 0 12px 12px 12px;
+		    border-color: transparent transparent white transparent;
+		}
+	}
+}

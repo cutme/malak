@@ -6,13 +6,29 @@ $thumbs__width:	1266;
 	margin: 0 auto;
 
 	&__item {
-		width: 422px;
+		width: grid(422, $thumbs__width);
 		margin-bottom: 30px;
-		padding-left: 15px;
-		padding-right: 15px;
+		padding-left: grid(15, $thumbs__width);
+		padding-right: grid(15, $thumbs__width);
 		
 		.anim & {
 			opacity: 0;
 		}
 	}
+	
+	@media screen and ( max-width: $tablet--portrait+px ) {
+		max-width: 768px;
+		padding: 0 10px 0 10px;
+
+		&__item {
+			width: grid(374, 768 - 20);
+		}
+	}
+	
+	@media screen and ( max-width: $smartphone--landscape+px ) {
+		&__item {
+			width: 100%;
+		}
+	}
+	
 }

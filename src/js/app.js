@@ -1,20 +1,10 @@
 /*jshint expr:true */
 
-function exist(o) {
-	return ($(o).length > 0) ? true : false;
-}
+(function(window, document, $, malak, undefined) {
+	'use strict';
 
-function goToTarget(target) {
-	var v = $('html, body'), o = $(target).offset().top;
-	v.animate({
-		scrollTop: o
-	}, {
-		duration: 1000,
-		easing: 'easeOutCubic'
-	});
-}
-
-jQuery(function($) {
+	var overlay = new malak.Overlay();		
+		overlay.init();
 
 	var Categories = {
 		init: function() {
@@ -32,10 +22,11 @@ jQuery(function($) {
 				}
 							
 				if ( $('.c-overlay.is-visible').length>0 ) {
-					Overlay.destroy();
-					goToTarget('#badges');
+					overlay.destroy();
+					malak.helper.goToTarget('#badges');
+					malak.contactForm.destroy();
 				} else {
-					$('body').removeClass('anim');
+					$('body').removeClass("anim");
 				}
 				
 				checkBox = $(this);
@@ -44,57 +35,29 @@ jQuery(function($) {
 		}
 	};
 
-	var L = {
-		init: function() {
-			$(document).on('click', '.js-goto', function(e) {
-				e.preventDefault();
-				var target = $(this).attr('href');				
-				goToTarget(target);
-			});
-
-		}
-	};
-
 	var Nav = {
 		init: function() {
 		
-			var container = $('.c-nav'),
-				content = $('.c-content'),
-				item_nav = $('.js-nav__link', container),
-				item_content = $('.c-content__item');
-			
-			item_nav.on('click', function(e) {
-				e.preventDefault();
-				item_content.removeClass('is-visible');
-				item_nav.removeClass('is-active');
-				$(this).addClass('is-active');
-				$($(this).attr('href')).addClass('is-visible');
-			});
-		}
-	};
-	
-	var Overlay = {
-		destroy: function() {
-			$('.c-overlay').removeClass('is-visible');			
-		},
-		
-		enable: function() {
-			$('.c-overlay').addClass('is-visible');
-		},
+			var container = document.getElementById('nav'),
+				content = document.getElementById('nav-content'),
+				item_nav = $('.c-nav__item', container),
+				item_content = $('.c-content__item', content);
 
-		init: function() {
-			$('.js-menu').on('click', Overlay.enable);
-			$('.js-exit').on('click', Overlay.destroy);	
-			
-			$(document).keyup(function(e) {
-				if (e.keyCode == 27) { 
-					Overlay.destroy();
-				}
+			container.addEventListener("click", function(e) {
+				var $$ = $(e.target).parent(), index = $$.index();
+
+				item_content.
+					removeClass('is-visible').
+					eq(index).addClass('is-visible');
+					
+				item_nav.removeClass('is-active');
+				$$.addClass('is-active');				
 			});
 		}
 	};
 
 	var Player = {
+		
 		buttons: function(o) {
 
 			// $f == Froogaloop
@@ -103,12 +66,17 @@ jQuery(function($) {
 				gridItem = $('.c-thumbs__item', grid),
 				iframe = document.getElementById('vimelar-player'),
 				nextButton = document.getElementById('next-button'),
-				player = $f(iframe),
 				playButton = document.getElementById('play-button'),
 				prevButton = document.getElementById('prev-button'),
-				soundButton = document.getElementById("play-sound");
-
-			function nextVideo() {
+				player = $f(iframe);
+				
+			document.getElementById('fullscreen-button').addEventListener('click', function() {
+				if (BigScreen.enabled) {
+					BigScreen.toggle();
+				}
+			}, false);
+			
+			nextButton.addEventListener('click', function() {
 				currentVideo ++;
 				Thumbs.replaceVideo(gridItem.eq(currentVideo));	
 				
@@ -117,45 +85,44 @@ jQuery(function($) {
 				}
 				
 				if (currentVideo == grid.length) {
-					$(nextButton).addClass('is-hidden');
+					$(this).addClass('is-hidden');
 				}
-			}
-
-			function playVideo() {
-				$(this).toggleClass('icon-play').toggleClass('icon-pause');
-				$(this).hasClass('icon-pause') ? player.api("play") : player.api("pause");
-			}
+			}, false);
 			
-			function prevVideo() {
+			playButton.addEventListener('click', function() {
+				$(this).toggleClass('icon-play icon-pause');
+				$(this).hasClass('icon-pause') ? player.api("play") : player.api("pause");
+			}, false);
+			
+			prevButton.addEventListener('click', function() {
 				currentVideo --;
 				Thumbs.replaceVideo(gridItem.eq(currentVideo));	
 				
 				if (currentVideo === 0) {
 					$(prevButton).addClass('is-hidden');
 				}
-				
+
 				$(nextButton).removeClass('is-hidden');
-			}
+			}, false);
 			
-			function sound() {
+			document.getElementById('play-sound').addEventListener('click', function() {
 				$(this).toggleClass('no-sound');
 				$(this).hasClass('no-sound') ? player.api('setVolume', 0) : player.api('setVolume', 1);
-			}
+			}, false);
 
-			$(nextButton).on('click', nextVideo);
-			$(playButton).on('click', playVideo);
-			$(prevButton).on('click', prevVideo);
-			$(soundButton).on('click', sound);
-			
 			iframe.addEventListener('load', function(e) {
 				$(iframe).fadeIn(1000);
-				$(o).addClass('is-ready');
-			});
+				$(o).removeClass('is-loading');
+			});			
 		},
 
 		init: function(o) {
-			$(o).vimelar({ videoId: '150163374' });			
-			Player.buttons(o);	
+
+			var firstThumbVideo = ($('.c-thumbs__item').eq(0).data('src'));
+					
+			$(o).vimelar({ videoId: firstThumbVideo });			
+			$('.c-player').addClass('is-loading');
+			Player.buttons(o);
 		}
 	};
 	
@@ -209,11 +176,13 @@ jQuery(function($) {
 		replaceVideo: function(o) {
 			var $$ = $(o),
 				src = '//player.vimeo.com/video/'+$$.data('src')+'?portrait=0&badge=0&byline=0&title=0&hd_off=1&api=1',
-				player = $('#vimelar-player');
+				player = $('#vimelar-player'),
+				playButton = document.getElementById('play-button');
 				
 			function loadVideo() {
 				player.fadeOut(500, function() { $(this).attr('src', src); });
-				$('#vid').removeClass('is-ready');	
+				$('.c-player').addClass('is-loading');
+				$(playButton).removeClass('icon-pause').addClass('icon-play');
 			}		
 			
 			if ($(window).scrollTop() !==0 ) {
@@ -237,13 +206,22 @@ jQuery(function($) {
 			Thumbs.createThumbs();
 		}	
 	};
-	
+
 	$(document).ready(function() {
-		L.init();
 		Nav.init();
 		Categories.init();
-		Overlay.init();
 		Thumbs.init();
-		Player.init('#vid');			
+		Player.init('#vid');
+		
+		$(document).on('click', '.js-goto', function(e) {
+			e.preventDefault();
+			malak.helper.goToTarget($(this).attr('href'));
+		});
 	});
-});
+
+
+
+
+		
+}(window, document, jQuery, window.malak = window.malak || {}));
+

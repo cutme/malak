@@ -16,17 +16,15 @@
 	<link href="css/style.css" rel="stylesheet">
 </head>
 
-<body class="no-scroll anim">  
+<body class="anim">  
 
 	
 	<div class="c-top">
-
 		
-		<a href="#" class="c-logo">
-			<img src="img/malak.svg" alt="malak" class="o-media">
-		</a>
+				<a href="#" class="c-logo">
+					<img src="img/malak.svg" alt="malak" class="o-media">
+				</a>
 
-		
 		
 		<nav class="c-menu js-menu" role="navigation">
 			<ul class="c-menu__trigger">
@@ -40,9 +38,7 @@
 			</ul>
 		</nav>
 
-	
 	</div>
-
 
 
 
@@ -89,7 +85,7 @@
 				</li>
 				
 				<li>
-					<a class="icon-fullscreen"></a>
+					<a class="icon-fullscreen" id="fullscreen-button"></a>
 				</li>
 			</ul>
 		</div>
@@ -101,18 +97,17 @@
 
 
 	
-	<div class="c-overlay">
+	<div class="c-overlay" id="overlay">
 		<div class="c-overlay__main">
-			<aside class="c-overlay__sidebar">
-		
-				
-		<a href="#" class="c-logo">
-			<img src="img/malak.svg" alt="malak" class="o-media">
-		</a>
+			
+				<a href="#" class="c-logo">
+					<img src="img/malak.svg" alt="malak" class="o-media">
+				</a>
 
+			
+			<aside class="c-overlay__sidebar" id="sidebar">
 				
-				
-				<div class="c-addresses">
+				<div class="c-addresses" id="addresses">
 					<h5>contact me</h5>
 					
 					<address>
@@ -134,38 +129,36 @@
 					</address>
 				</div>
 
-		
 			</aside>
 
 			<div class="c-overlay__content">
 				
-				
-				<nav class="c-nav" role="navigation">
-					<ul>
-						<li class="c-nav__item">
-							<a href="#portfolio" class="c-nav__link js-nav__link is-active">portfolio</a>
+				<nav class="c-nav " id="nav" role="navigation">
+					<ul class="c-nav__carousel js-flickity">
+						<li class="c-nav__item carousel-cell is-active">
+							<a href="#portfolio" class="c-nav__link gallery-cell">portfolio</a>
 						</li>
 						
-						<li class="c-nav__item">
-							<a href="#awards" class="c-nav__link js-nav__link">awards</a>
+						<li class="c-nav__item carousel-cell">
+							<a href="#awards" class="c-nav__link gallery-cell">awards</a>
 						</li>
 						
-						<li class="c-nav__item">
-							<a href="#about" class="c-nav__link js-nav__link">about</a>
+						<li class="c-nav__item carousel-cell">
+							<a href="#about" class="c-nav__link gallery-cell">about</a>
 						</li>
 						
-						<li class="c-nav__item">
-							<a href="#contact-form" class="c-nav__link js-nav__link">contact form</a>
+						<li class="c-nav__item carousel-cell">
+							<a href="#contact-form" class="c-nav__link gallery-cell">contact form</a>
 						</li>
 					</ul>
 				</nav>
 
 				
-				
-				<div class="c-content">
-					<div class="c-content__item effect-1 is-visible" id="portfolio">
-						
-						
+				<div class="c-content" id="nav-content">					
+					<ul class="c-content__list">
+					
+						<li class="c-content__item effect-1 is-visible">
+							
 	<div class="c-categories">
 		<ul>
 			<li class="is-active">
@@ -213,11 +206,12 @@
 	</div>
 
 
-						
-					</div>
+						</li>
+
+						<li class="c-content__item effect-1">
+							
 					
-					<div class="c-content__item effect-1" id="awards">
-						<ul class="o-list o-list--awards">
+						<ul class="o-list o-list--awards" id="awards">
 							<li>
 								<span class="date">2015</span>
 								<p>ktr silver film craft / edit for cropp hong kong</p>
@@ -258,20 +252,28 @@
 								<p>ktr silver film craft / edit for cropp hong kong</p>
 							</li>
 						</ul>
-					</div>
-					
-					<div class="c-content__item effect-1 o-typo" id="about">
+
+
+						</li>
+
+						<li class="c-content__item effect-1">
+							
+					<div class="o-typo">
 <p>Film director, photographer and writer. Born in 1982 in Wrocław, Poland. Florian has already 12 years of professional commercial experience working in the advertising business. His ideas, commercials and music videos have won the most important awards in Poland like: KTR, ZŁOTE ORŁY and CYBERYACH. Florian directed numerous televison commercials for the brands like: SAMSUNG, KFC, ORANGE, T-MOBILE, CROPP, PZU, ALLEGRO and more. Right now he is the only young Polish director whose two spots made it to the most prestigious London magazine “SHOTS”. He pioneered “CAMERA SHIFT” and “ROTOFREEZE” visual techniques on the Polish commercial market. Certainly he feels comfortable with any style of commercial, but his speciality are post-production dedicated projects especially music, sport, fashion and lifestyle. Florian is currently developing his first feature film.</p>
-					</div>
+					</div
+
+						</li>
+
+						<li class="c-content__item effect-1">
+							
 					
-					<div class="c-content__item effect-1 o-form" id="contact-form">
-						<form action="#">
+						<form action="#" class="o-form" id="contact-form">
 							<div class="o-form__row">
 								<input type="text" placeholder="Your name">
 							</div>
 							
 							<div class="o-form__row">
-								<input type="email" placeholder="email address">
+								<input type="email" placeholder="email address" autocomplete="off" required>
 							</div>
 							
 							<div class="o-form__row">
@@ -296,10 +298,12 @@
 								<button type="submit" class="o-btn"><span>send</span></button>
 							</div>
 						</form>
-					</div>
+
+
+						</li>
+					</ul>
 				</div>
 
-				
 			</div>
 			
 			<p class="c-author">Design & Development by Skygate</p>

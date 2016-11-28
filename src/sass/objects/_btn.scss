@@ -1,5 +1,5 @@
 .o-btn {
-//	display: inline-block;	
+	@extend %anim;
 	position: relative;
 	border: 1px solid rgba(white, .2);
 	padding: 10px 40px;
@@ -15,7 +15,7 @@
 		left: 0;
 		z-index: -1 !important;
 		width: 100%; height: 0;
-		background-color: rgba(white, .2);
+		background-color: white;
 	}
 	
 	&:after {
@@ -31,5 +31,6 @@
 		&:before {
 			height: 50%;
 		}
+		color: black;
 	}
 }

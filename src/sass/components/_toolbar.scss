@@ -19,4 +19,8 @@
 	&__params {
 		float: left;
 	}
+	
+	@media screen and ( max-width: $tablet--landscape + px ) {
+		right: 20px;
+	}
 }

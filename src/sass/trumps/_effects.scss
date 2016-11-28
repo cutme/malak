@@ -46,13 +46,10 @@
             animation: effect-1 .4s;
 }
 
-.effect-2.is-visible,
-.c-overlay.is-visible {
+.effect-2.is-visible {
 	display: block;
-	-webkit-transform: translateY(200px);
-	        transform: translateY(200px);
-	-webkit-animation: moveUp 0.65s ease forwards;
-	        animation: moveUp 0.65s ease forwards;
+	transform: translateY(200px);
+	animation: moveUp 0.65s ease forwards;
 }
 
 .effect-3.is-visible {

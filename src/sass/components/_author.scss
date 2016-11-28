@@ -1,7 +1,16 @@
 .c-author {
-	position: absolute;
-	left: 90px; bottom: 0;
 	font-size: em(12);
 	letter-spacing: 1px;
-	color: #454545;
+	color: #454545;	
+	
+	@media screen and ( min-width: $tablet--landscape + 1 +px ) and ( max-width: $grid-base-width+px ) {
+		width: grid(270, $grid-base-width - 180);
+	}
+	
+	@media screen and ( min-width: $tablet--landscape + 1 +px ) {
+		position: absolute;
+		left: grid(90); bottom: 0;
+		width: 270px;
+		padding-right: 20px;
+	}
 }

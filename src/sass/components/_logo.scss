@@ -4,11 +4,28 @@
 	.c-top & {
 		@extend %middle;
 		left: $padding+px; 
-		width: 110px;
+		width: 110px;		
 	}
 	
-	.c-overlay & {
-		width: 180px;
-		margin-bottom: 50px;
+	.c-overlay & {		
+		@media screen and ( min-width: $tablet--landscape + 1 + px ) {
+			position: relative;
+			width: 180px;
+			margin-bottom: 50px;
+		}
+		
+		@media screen and ( max-width: $tablet--landscape + px ) {
+			@extend %abs;
+			left: $padding+px; 
+			top: 40px;
+			width: 110px;	
+		}
+	}
+	
+	@media screen and ( max-width: $tablet--landscape+px ) {
+		.c-top &,
+		.c-overlay & {	
+			left: 20px;
+		}
 	}
 }

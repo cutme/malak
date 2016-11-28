@@ -12,7 +12,12 @@
 	
 	&__row {
 		@extend %clear;
+		position: relative; z-index: 5;
 		margin-bottom: 20px;
+		
+		&.has-error {
+			z-index: 10;
+		}
 	}
 	
 	.o-btn {
