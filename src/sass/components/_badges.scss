@@ -8,7 +8,7 @@
 		@extend %icon;
 	}
 	
-	@media screen and ( max-width: $tablet--portrait+px ) {
+	@media screen and ( max-width: $smartphone--landscape+px ) {
 		display: none;
 	}
 }

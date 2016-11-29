@@ -3,15 +3,12 @@
 	background-color: black;
 	position: relative; z-index: 5;
 	
-	&:after {
-		@extend %loading;
-		display: none;
+	#vid {
+		position: relative;
 	}
 	
-	&.is-loading {
-		&:after {
-			display: block;
-		}
+	@media screen and ( max-width: $smartphone--landscape + px ) {
+		display: none;
 	}
 }
 

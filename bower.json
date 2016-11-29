@@ -27,14 +27,15 @@
     "multipleFilterMasonry": "./src/assets/js/multipleFilterMasonry.js",
     "parsleyjs": "^2.6.0",
     "BigScreen": "bigscreen#^2.0.5",
-    "flickity": "^2.0.5"
+    "flickity": "^2.0.5",
+    "jquery.nice-select.min": "./dist/jquery.nice-select.min.js"
   },
   "overrides": {
-	  "flickity": {
-	    "main": [
-	      "./dist/flickity.pkgd.js",
-	      "./dist/flickity.min.css"
-	    ]
-	  }
+    "flickity": {
+      "main": [
+        "./dist/flickity.pkgd.js",
+        "./dist/flickity.min.css"
+      ]
+    }
   }
 }

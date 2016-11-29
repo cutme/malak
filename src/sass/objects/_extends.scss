@@ -51,9 +51,11 @@
 	color: $c-gray;
 	
 	&:hover {
-		.o-form &,
-		.c-badges & {
-			transform: scale(1.1);
+		&:not(.icon-arrow_down) {
+			.o-form &,
+			.c-badges & {
+				transform: scale(1.1);
+			}
 		}
 		
 		color: $c-gray--bright;

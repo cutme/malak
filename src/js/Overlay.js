@@ -9,7 +9,8 @@
 		freeScroll: true,
 		prevNextButtons: false,
 		pageDots: false,
-		watchCSS: true
+		watchCSS: true,
+		 wrapAround: true
 	});
 
 	Overlay.prototype.init = function() {
@@ -19,31 +20,32 @@
 
 	Overlay.prototype.mobile = function() {
 		var addresses = document.getElementById('addresses'), 
+			categoriesHome = document.getElementById('categories'),
 			contactform = document.getElementById('contact-form'), 
-			sidebar = document.getElementById('sidebar'), status = false;
-
-		function init() {
+			sidebar = document.getElementById('sidebar'), statusContact = false;
+		
+		function moveContact() {
 			$(addresses).detach();
 			$(contactform).before($(addresses));
-			status = true;
+			statusContact = true;
 		}
-		
-		$(window).resize(malak.helper.debouncer(function() {
+
+		window.addEventListener('resize', function(e) {
 			if (malak.helper.isWindowSmallerThan(1025) === true) {
-				if (status === false) {
-					init();
+				if (statusContact === false) {
+					moveContact();
 				}
 			} else {
-				if (status === true) {
+				if (statusContact === true) {
 					$(addresses).detach();
 					$(sidebar).append($(addresses));
-					status = false;
+					statusContact = false;
 				}
 			}			
-		}));
+		});
 		
 		if (malak.helper.isWindowSmallerThan(1025) === true) {
-			init();
+			moveContact();
 		}
 	};
 	
@@ -66,6 +68,7 @@
 	
 	Overlay.prototype.destroy = function() {
 		$(document.getElementById('overlay')).removeClass('is-visible');
+		$(document.getElementsByTagName('body')).removeClass('no-scroll');
 		malak.contactForm.destroy();
 	};
 	
@@ -78,7 +81,13 @@
 		$(overlay).addClass('is-visible');
 				
 		malak.contactForm.enable();		
-		flky.resize();
+		
+		setTimeout(function() {
+			$('.js-flickity').show();
+			flky.resize();
+			
+		}, 1000);
+		
 	};
 
 

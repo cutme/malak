@@ -6,9 +6,7 @@
 	}
 	.effect-2 li.animate,
 	.effect-2 li.shown {
-		-webkit-transform: translateY(100px);
 		        transform: translateY(100px);
-		-webkit-animation: moveUp 0.65s ease forwards;
 		        animation: moveUp 0.65s ease forwards;
 	}
 }
@@ -68,4 +66,14 @@
 @keyframes moveUp {
 	0% { }
 	100% { -webkit-transform: translateY(0); transform: translateY(0); opacity: 1; }
+}
+
+@-webkit-keyframes opacity {
+	0% { }
+	100% { opacity: 1; }
+}
+
+@keyframes opacity {
+	0% { }
+	100% { opacity: 1; }
 }

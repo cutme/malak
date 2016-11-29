@@ -158,54 +158,55 @@
 					<ul class="c-content__list">
 					
 						<li class="c-content__item effect-1 is-visible">
-							
-	<div class="c-categories">
-		<ul>
-			<li class="is-active">
-				<label class="c-categories__item">
-					<input type="checkbox" value="*" class="js-category js-category--all">#all
-				</label>				
-			</li>
+							<div class="c-categories is-opened">
+								<div class="c-categories__list">
+									
+			<ul>
+				<li class="is-active">
+					<label class="c-categories__item">
+						<input type="checkbox" value="*" class="js-category js-category--all">#all
+					</label>				
+				</li>
+		
+				<li>
+					<label class="c-categories__item">
+						<input type="checkbox" value="fashion" class="js-category">#fashion
+					</label>
+				</li>
+				
+				<li>
+					<label class="c-categories__item">
+						<input type="checkbox" value="commercial" class="js-category">#commercial
+					</label>
+				</li>
+				
+				<li>
+					<label class="c-categories__item">
+						<input type="checkbox" value="music" class="js-category">#music
+					</label>
+				</li>
+				
+				<li>
+					<label class="c-categories__item">
+						<input type="checkbox" value="advertising" class="js-category">#advertising
+					</label>
+				</li>
+				
+				<li>
+					<label class="c-categories__item">
+						<input type="checkbox" value="sport" class="js-category">#sport
+					</label>
+				</li>
+				
+				<li>
+					<label class="c-categories__item">
+						<input type="checkbox" value="other" class="js-category">#other
+					</label>
+				</li>				
+			</ul>
 
-			<li>
-				<label class="c-categories__item">
-					<input type="checkbox" value="fashion" class="js-category">#fashion
-				</label>
-			</li>
-			
-			<li>
-				<label class="c-categories__item">
-					<input type="checkbox" value="commercial" class="js-category">#commercial
-				</label>
-			</li>
-			
-			<li>
-				<label class="c-categories__item">
-					<input type="checkbox" value="music" class="js-category">#music
-				</label>
-			</li>
-			
-			<li>
-				<label class="c-categories__item">
-					<input type="checkbox" value="advertising" class="js-category">#advertising
-				</label>
-			</li>
-			
-			<li>
-				<label class="c-categories__item">
-					<input type="checkbox" value="sport" class="js-category">#sport
-				</label>
-			</li>
-			
-			<li>
-				<label class="c-categories__item">
-					<input type="checkbox" value="other" class="js-category">#other
-				</label>
-			</li>
-		</ul>
-	</div>
-
-
+								</div>
+							</div>
 						</li>
 
 						<li class="c-content__item effect-1">
@@ -313,55 +314,58 @@
 	</div>
 
 
+	<div class="c-categories" id="mainCategories">
+		<div class="c-categories__list">
+		
 	
-	
-	<div class="c-categories">
-		<ul>
-			<li class="is-active">
-				<label class="c-categories__item">
-					<input type="checkbox" value="*" class="js-category js-category--all">#all
-				</label>				
-			</li>
+			<ul>
+				<li class="is-active">
+					<label class="c-categories__item">
+						<input type="checkbox" value="*" class="js-category js-category--all">#all
+					</label>				
+				</li>
+		
+				<li>
+					<label class="c-categories__item">
+						<input type="checkbox" value="fashion" class="js-category">#fashion
+					</label>
+				</li>
+				
+				<li>
+					<label class="c-categories__item">
+						<input type="checkbox" value="commercial" class="js-category">#commercial
+					</label>
+				</li>
+				
+				<li>
+					<label class="c-categories__item">
+						<input type="checkbox" value="music" class="js-category">#music
+					</label>
+				</li>
+				
+				<li>
+					<label class="c-categories__item">
+						<input type="checkbox" value="advertising" class="js-category">#advertising
+					</label>
+				</li>
+				
+				<li>
+					<label class="c-categories__item">
+						<input type="checkbox" value="sport" class="js-category">#sport
+					</label>
+				</li>
+				
+				<li>
+					<label class="c-categories__item">
+						<input type="checkbox" value="other" class="js-category">#other
+					</label>
+				</li>				
+			</ul>
 
-			<li>
-				<label class="c-categories__item">
-					<input type="checkbox" value="fashion" class="js-category">#fashion
-				</label>
-			</li>
-			
-			<li>
-				<label class="c-categories__item">
-					<input type="checkbox" value="commercial" class="js-category">#commercial
-				</label>
-			</li>
-			
-			<li>
-				<label class="c-categories__item">
-					<input type="checkbox" value="music" class="js-category">#music
-				</label>
-			</li>
-			
-			<li>
-				<label class="c-categories__item">
-					<input type="checkbox" value="advertising" class="js-category">#advertising
-				</label>
-			</li>
-			
-			<li>
-				<label class="c-categories__item">
-					<input type="checkbox" value="sport" class="js-category">#sport
-				</label>
-			</li>
-			
-			<li>
-				<label class="c-categories__item">
-					<input type="checkbox" value="other" class="js-category">#other
-				</label>
-			</li>
-		</ul>
+	
+			<i class="icon-arrow_down" id="dropdownTrigger"></i>
+		</div>
 	</div>
-
-
 
 	
 	
@@ -371,90 +375,108 @@
 			<li class="c-thumbs__item music fashion advertising is-playing" data-src="150163374">
 				<div class="c-thumb">
 					<img src="#" alt="" class="o-media">
-					<p class="c-thumb__title"></p>
-					<p class="c-thumb__categories">
-						<span>#music</span> <span>#fashion</span> <span>#advertising</span>
-					</p>
+					<div class="c-thumb__info">
+						<p class="c-thumb__title"></p>
+						<p class="c-thumb__categories">
+							<span>#music</span> <span>#fashion</span> <span>#advertising</span>
+						</p>
+					</div>
 				</div>
 			</li>
 
 			<li class="c-thumbs__item music commercial advertising" data-src="144353463">
 				<div class="c-thumb">
 					<img src="#" alt="" class="o-media">
-					<p class="c-thumb__title">T-Mobile OFF FESTIVAL ELECTRONIC BEATS</p>
-					<p class="c-thumb__categories">
-						<span>#music</span> <span>#commercial</span> <span>#advertising</span>
-					</p>
+					<div class="c-thumb__info">
+						<p class="c-thumb__title"></p>
+						<p class="c-thumb__categories">
+							<span>#music</span> <span>#commercial</span> <span>#advertising</span>
+						</p>
+					</div>
 				</div>
 			</li>
 
 			<li class="c-thumbs__item music commercial" data-src="140931121">
 				<div class="c-thumb">
 					<img src="#" alt="" class="o-media">
-					<p class="c-thumb__title">T-Mobile OFF FESTIVAL ELECTRONIC BEATS</p>
-					<p class="c-thumb__categories">
-						<span>#music</span> <span>#commercial</span>
-					</p>
+					<div class="c-thumb__info">
+						<p class="c-thumb__title"></p>
+						<p class="c-thumb__categories">
+							<span>#music</span> <span>#commercial</span>
+						</p>
+					</div>
 				</div>
 			</li>
 
 			<li class="c-thumbs__item music" data-src="135687864">
 				<div class="c-thumb">
 					<img src="#" alt="" class="o-media">
-					<p class="c-thumb__title">T-Mobile OFF FESTIVAL ELECTRONIC BEATS</p>
-					<p class="c-thumb__categories">
-						<span>#music</span>
-					</p>
+					<div class="c-thumb__info">
+						<p class="c-thumb__title"></p>
+						<p class="c-thumb__categories">
+							<span>#music</span>
+						</p>
+					</div>
 				</div>
 			</li>
 
 			<li class="c-thumbs__item music" data-src="154736722">
 				<div class="c-thumb">
 					<img src="#" alt="" class="o-media">
-					<p class="c-thumb__title">T-Mobile OFF FESTIVAL ELECTRONIC BEATS</p>
-					<p class="c-thumb__categories">
-						<span>#music</span>
-					</p>
+					<div class="c-thumb__info">
+						<p class="c-thumb__title"></p>
+						<p class="c-thumb__categories">
+							<span>#music</span>
+						</p>
+					</div>
 				</div>
 			</li>
 			
 			<li class="c-thumbs__item commercial" data-src="129914216">
 				<div class="c-thumb">
 					<img src="#" alt="" class="o-media">
-					<p class="c-thumb__title">T-Mobile OFF FESTIVAL ELECTRONIC BEATS</p>
-					<p class="c-thumb__categories">
-						<span>#commercial</span>
-					</p>
+					<div class="c-thumb__info">
+						<p class="c-thumb__title"></p>
+						<p class="c-thumb__categories">
+							<span>#commercial</span>
+						</p>
+					</div>
 				</div>
 			</li>
 			
 			<li class="c-thumbs__item fashion sport" data-src="124219308">
 				<div class="c-thumb">
 					<img src="#" alt="" class="o-media">
-					<p class="c-thumb__title">T-Mobile OFF FESTIVAL ELECTRONIC BEATS</p>
-					<p class="c-thumb__categories">
-						<span>#fashion</span> <span>#sport</span>
-					</p>
+					<div class="c-thumb__info">
+						<p class="c-thumb__title"></p>
+						<p class="c-thumb__categories">
+							<span>#fashion</span> <span>#sport</span>
+						</p>
+					</div>
 				</div>
 			</li>
 			
 			<li class="c-thumbs__item sport" data-src="119939956">
 				<div class="c-thumb">
 					<img src="#" alt="" class="o-media">
-					<p class="c-thumb__title">T-Mobile OFF FESTIVAL ELECTRONIC BEATS</p>
-					<p class="c-thumb__categories">
-						<span>#sport</span>
-					</p>
+					<div class="c-thumb__info">
+						<p class="c-thumb__title"></p>
+						<p class="c-thumb__categories">
+							<span>#sport</span>
+						</p>
+					</div>
 				</div>
 			</li>
 
 			<li class="c-thumbs__item other" data-src="128233470">
 				<div class="c-thumb">
 					<img src="#" alt="" class="o-media">
-					<p class="c-thumb__title">T-Mobile OFF FESTIVAL ELECTRONIC BEATS</p>
-					<p class="c-thumb__categories">
-						<span>#other</span>
-					</p>
+					<div class="c-thumb__info">
+						<p class="c-thumb__title"></p>
+						<p class="c-thumb__categories">
+							<span>#other</span>
+						</p>
+					</div>
 				</div>
 			</li>
 		</ul>

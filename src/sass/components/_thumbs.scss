@@ -2,17 +2,24 @@ $thumbs__width:	1266;
 
 .c-thumbs {
 	@extend %clear;
+	position: relative;
 	max-width: $thumbs__width+px;
 	margin: 0 auto;
 
 	&__item {
-		width: grid(422, $thumbs__width);
-		margin-bottom: 30px;
-		padding-left: grid(15, $thumbs__width);
-		padding-right: grid(15, $thumbs__width);
-		
+
 		.anim & {
 			opacity: 0;
+		}
+	
+	}
+	
+	@media screen and ( min-width: $smartphone--landscape + 1 + px ) {
+		&__item {
+			width: grid(422, $thumbs__width);
+			margin-bottom: 30px;
+			padding-left: grid(15, $thumbs__width);
+			padding-right: grid(15, $thumbs__width);
 		}
 	}
 	
@@ -26,6 +33,8 @@ $thumbs__width:	1266;
 	}
 	
 	@media screen and ( max-width: $smartphone--landscape+px ) {
+		padding: 0;
+
 		&__item {
 			width: 100%;
 		}

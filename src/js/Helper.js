@@ -3,25 +3,21 @@
 
 	var Helper = function() {
         return {
-        	debouncer: debouncer,
+        	animOnScroll: animOnScroll,
             exist: exist,
             goToTarget: goToTarget,
+            isMobile: isMobile,
             isWindowSmallerThan: isWindowSmallerThan
         };
     };
     
-    function debouncer(func, timeout) {
-		var timeoutID;
-		timeout = timeout || 200;
-		return function() {
-			var scope = this,
-				args = arguments;
-			clearTimeout(timeoutID);
-			timeoutID = setTimeout(function() {
-				func.apply(scope, Array.prototype.slice.call(args));
-			}, timeout);
-		};
-	}
+    function animOnScroll() {
+   		new AnimOnScroll( document.getElementById( 'grid' ), {
+			minDuration : 0.4,
+			maxDuration : 0.7,
+			viewportFactor : 0.2
+		} );
+    }
 
     function exist(o) {
 		return ($(o).length > 0) ? true : false;
@@ -34,6 +30,10 @@
 			duration: 1000,
 			easing: 'easeOutCubic'
 		});
+	}
+	
+	function isMobile() {
+		return malak.helper.isWindowSmallerThan(641);
 	}
 	
 	function isWindowSmallerThan(resBorder) {
