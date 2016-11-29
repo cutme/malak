@@ -29,10 +29,12 @@
 	&__main {
 		@extend %center-middle;
 		width: $grid-base-width+px;
+		padding: 0 90px;
+		overflow: hidden;
 
 		&:after {
 			@extend %abs-after;
-			left: grid(360); top: 0;
+			left: 360px; top: 0;
 			width: 1px; height: 100%;
 			background-color: rgba(white, .1);
 		}
@@ -42,6 +44,14 @@
 		float: left;
 		width: 270px;
 		position: relative;
+	}
+	
+	@media screen and ( min-width: $tablet--landscape + 1 +px ) and ( max-width: $grid-base-width+px ) {
+		&__main {
+			&:after {
+				left: grid(360);
+			}
+		}
 	}
 	
 	@media screen and ( max-width: $grid-base-width+px ) {

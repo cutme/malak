@@ -1,5 +1,6 @@
 .c-nav {
-
+	width: 425px;
+	
 	&__link {
 		@extend %animfix;
 		opacity: .3;
@@ -24,10 +25,13 @@
 		content: 'flickity';
 		display: none;
 	}
+	
+	@media screen and ( min-width: $tablet--landscape + 1 + px ) and ( max-width: $grid-base-width + px) {
+		width: grid(425, 916);
+	}
 
 	@media screen and ( min-width: $tablet--landscape + 1 + px ) {
 		float: left;
-		width: grid(425, 916);
 		padding-left: 50px;
 		
 		&__item {

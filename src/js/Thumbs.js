@@ -109,8 +109,6 @@
 					$(iframe).css('width', ww);
 				});
 				
-			alert('z');
-				
 			// When the player is ready/loaded, add a finish event listener
 			player.addEvent('ready', function() {
 				//Adds an event 'finish' that executes a function 'onFinish' when the video has ended.

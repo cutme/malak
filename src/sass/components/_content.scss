@@ -7,8 +7,11 @@
 		margin-bottom: 30px;
 	}
 	
-	@media screen and ( min-width: $tablet--landscape + 1 +px ) and ( max-width: $grid-base-width+px ) {
+	@media screen and ( min-width: $tablet--landscape + 1 +px ) {
 		float: left;
+	}
+	
+	@media screen and ( min-width: $tablet--landscape + 1 +px ) and ( max-width: $grid-base-width+px ) {
 		width: grid(490, 916);
 	}
 	

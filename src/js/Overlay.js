@@ -1,44 +1,45 @@
 (function(window, document, $, malak, undefined) {
 	'use strict';
 	
-	var Overlay = malak.Overlay = function () { };
+	var Overlay = malak.Overlay = function () {
+		
+	};
 	
-	var flky = new Flickity( '.js-flickity', {
-		cellAlign: 'left',
-		contain: true,
-		freeScroll: true,
-		prevNextButtons: false,
-		pageDots: false,
-		watchCSS: true
-	});
+	Overlay.prototype = {
+		dupa: function() {
+			alert('asdf');
+		}
+	};
 
 	Overlay.prototype.init = function() {
 		this.events();
 		this.mobile();
 	};
+	
+	
 
 	Overlay.prototype.mobile = function() {
 		var addresses = document.getElementById('addresses'), 
 			categoriesHome = document.getElementById('categories'),
 			contactform = document.getElementById('contact-form'), 
-			sidebar = document.getElementById('sidebar'), statusContact = false;
+			sidebar = document.getElementById('sidebar'), status = false;
 		
 		function moveContact() {
 			$(addresses).detach();
 			$(contactform).before($(addresses));
-			statusContact = true;
+			status = true;
 		}
 
 		window.addEventListener('resize', function(e) {
 			if (malak.helper.isWindowSmallerThan(1025) === true) {
-				if (statusContact === false) {
+				if (status === false) {
 					moveContact();
 				}
 			} else {
-				if (statusContact === true) {
+				if (status === true) {
 					$(addresses).detach();
 					$(sidebar).append($(addresses));
-					statusContact = false;
+					status = false;
 				}
 			}			
 		});
@@ -69,27 +70,37 @@
 		$(document.getElementById('overlay')).removeClass('is-visible');
 		$(document.getElementsByTagName('body')).removeClass('no-scroll');
 		malak.contactForm.destroy();
+		
+		var flky = new Flickity( '.js-carousel' );
+		flky.destroy();
 	};
 	
 	Overlay.prototype.enable = function() {
 
 		var body = document.getElementsByTagName('body'),
-			overlay = document.getElementById('overlay');
-			
+			overlay = document.getElementById('overlay'),
+			status = false,
+			flky;	
+
 		$(body).addClass('no-scroll');
 		$(overlay).addClass('is-visible');
-				
-		malak.contactForm.enable();		
 		
-setTimeout(function() {
-			$('.js-flickity').show();
-			flky.resize();
+		function enableFlickity() {
+			flky = new Flickity( '.js-carousel', {
+				cellAlign: 'left',
+				contain: true,
+				freeScroll: true,
+				prevNextButtons: false,
+				pageDots: false,
+				watchCSS: true
+			});
+		}		
 			
-		}, 1000);
-
-		
+		if (malak.helper.isWindowSmallerThan(1025) === true) {
+			enableFlickity();
+			flky.resize();
+		} 
 	};
-
 
 }(window, document, jQuery, window.malak = window.malak || {}));
 
