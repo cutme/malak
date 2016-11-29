@@ -62,7 +62,7 @@
 			
 			nextButton.addEventListener('click', function() {
 				currentVideo ++;
-				Thumbs.showVideo(gridItem.eq(currentVideo));	
+				thumbs.showVideo(gridItem.eq(currentVideo));	
 				
 				if (currentVideo > 0) {
 					$(prevButton).removeClass('is-hidden');
@@ -80,7 +80,7 @@
 			
 			prevButton.addEventListener('click', function() {
 				currentVideo --;
-				Thumbs.showVideo(gridItem.eq(currentVideo));	
+				thumbs.showVideo(gridItem.eq(currentVideo));	
 				
 				if (currentVideo === 0) {
 					$(prevButton).addClass('is-hidden');

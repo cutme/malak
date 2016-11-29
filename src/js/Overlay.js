@@ -67,6 +67,7 @@
 	};
 	
 	Overlay.prototype.destroy = function() {
+		$(document.getElementById('mainCategories')).removeClass('is-opened');
 		$(document.getElementById('overlay')).removeClass('is-visible');
 		$(document.getElementsByTagName('body')).removeClass('no-scroll');
 		malak.contactForm.destroy();

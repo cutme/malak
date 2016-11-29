@@ -128,7 +128,7 @@
 				malak.helper.animOnScroll();
 			});	
 		}
-		
+
 		function loadBigVideo() {
 			var player = $('#vimelar-player'),
 				src = '//player.vimeo.com/video/'+vId+'?portrait=0&badge=0&byline=0&title=0&hd_off=1&api=1';
@@ -148,7 +148,7 @@
 					complete: loadBigVideo
 				});
 			} else {
-				malak.thumbs.loadBigVideo();
+				loadBigVideo();
 			}
 		} else {
 			loadThumbVideo();
