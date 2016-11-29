@@ -9,8 +9,7 @@
 		freeScroll: true,
 		prevNextButtons: false,
 		pageDots: false,
-		watchCSS: true,
-		 wrapAround: true
+		watchCSS: true
 	});
 
 	Overlay.prototype.init = function() {
@@ -82,11 +81,12 @@
 				
 		malak.contactForm.enable();		
 		
-		setTimeout(function() {
+setTimeout(function() {
 			$('.js-flickity').show();
 			flky.resize();
 			
 		}, 1000);
+
 		
 	};
 
