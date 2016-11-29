@@ -13,7 +13,7 @@
 
 	Overlay.prototype.init = function() {
 		this.events();
-		this.mobile();
+		//this.mobile();
 	};
 	
 	
@@ -43,6 +43,8 @@
 				}
 			}			
 		});
+		
+		
 		
 		if (malak.helper.isWindowSmallerThan(1025) === true) {
 			moveContact();
@@ -100,7 +102,9 @@
 		if (malak.helper.isWindowSmallerThan(1025) === true) {
 			enableFlickity();
 			flky.resize();
-		} 
+		}
+		
+		malak.contactForm.init();
 	};
 
 }(window, document, jQuery, window.malak = window.malak || {}));
