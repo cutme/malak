@@ -4,12 +4,6 @@
 	var Overlay = malak.Overlay = function () {
 		
 	};
-	
-	Overlay.prototype = {
-		dupa: function() {
-			alert('asdf');
-		}
-	};
 
 	Overlay.prototype.init = function() {
 		this.events();
