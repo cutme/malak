@@ -3,7 +3,8 @@
 	
 	&.filled  {
 		transform: translateY(20px);
-		animation: moveUp 0.65s ease forwards;
+		opacity: 1;
+		//animation: moveUp 0.65s ease forwards;
 		position: absolute;
 		top: 45px;
 		background-color: white;
@@ -13,7 +14,7 @@
 
 		&:before {
 			@extend %abs-after;
-			left: 10px; top: -12px;
+			left: 10px; top: -11px;
 		    display: inline-block;
 		    width: 0;
 		    height: 0;

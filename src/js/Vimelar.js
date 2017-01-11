@@ -27,7 +27,7 @@
         $('<iframe />', {
             name: 'myFrame',
             id: 'vimelar-player',
-            src: '//player.vimeo.com/video/' + opts.videoId + '?portrait=0&badge=0&byline=0&title=0&hd_off=1&api=1',
+            src: '//player.vimeo.com/video/' + opts.videoId + '?autoplay=1&portrait=0&badge=0&byline=0&title=0&hd_off=1&api=1',
             style: 'position: absolute;',
             frameborder: 0,
             webkitallowfullscreen: 1,

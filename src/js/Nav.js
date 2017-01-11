@@ -36,6 +36,8 @@
 			malak.thumbs.reset();
 		});
 	};
+	
+	malak.nav = new Nav();
 
 }(window, document, jQuery, window.malak = window.malak || {}));
 

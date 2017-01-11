@@ -7,7 +7,26 @@
 	}
 	
 	&__categories {
-		color: #888;
+		//text-transform: uppercase;
+		//color: #888;
+	}
+	
+	&__category {
+		&:hover {
+			color: white;
+		}
+	}
+	
+	&__photo {
+		&:hover {
+			opacity: .9;
+		}
+	}
+	
+	&__title {
+		display: block;
+		margin-bottom: 5px;
+		text-transform: uppercase;
 	}
 	
 	.o-media {
@@ -15,15 +34,11 @@
 		margin-bottom: 10px;
 	}
 	
-	&:hover {
-		.o-media {
-			opacity: .8;
-		}
-	}
-	
+/*
 	&.hide {
 		opacity: 0;
 	}
+*/
 	
 	@media screen and ( max-width: $smartphone--landscape+px ) {
 		&__info {

@@ -1,6 +1,6 @@
 .c-toolbar {
 	@extend %middle;
-	right: $padding+px;
+	left: $padding+px;
 	
 	li {
 		float: left;
@@ -21,6 +21,6 @@
 	}
 	
 	@media screen and ( max-width: $tablet--landscape + px ) {
-		right: 20px;
+		left: 20px;
 	}
 }

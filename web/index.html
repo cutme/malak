@@ -16,17 +16,17 @@
 	<link href="css/style.css" rel="stylesheet">
 </head>
 
-<body class="anim">  
+<body class="no-scroll">  
 
 	
 	<div class="c-top">
 		
 				<a href="#" class="c-logo">
-					<img src="img/malak.svg" alt="malak" class="o-media">
+					<img src="img/florian_malak_logotyp.svg" alt="Florian Malak | The work of director" class="o-media">
 				</a>
 
 		
-		<nav class="c-menu js-menu" role="navigation">
+		<nav class="c-menu js-menu">
 			<ul class="c-menu__trigger">
 				<li>
 					<span class="label">menu</span>
@@ -43,35 +43,25 @@
 
 
 	
-	<div class="c-player" id="vid"></div>
+	<div class="c-player" id="vid">
+		<div class="c-player__touch" id="playerTouch">
+			<i class="icon-play"></i>
+		</div>
+	</div>
 
 		
 	
 	
-	<div class="c-badges" id="badges">
-	
-		<ul class="c-social">
-			<li>
-				<a href="#" class="icon-vimeo"></a>
-			</li>
-
-			<li>
-				<a href="#" class="icon-facebook"></a>
-			</li>
-			
-			<li>
-				<a href="#" class="icon-instagram"></a>
-			</li>
-		</ul>
+	<div class="c-badges" id="badges">		
 		
 		<div class="c-toolbar">
 			<ul class="c-toolbar__nav" id="player-navigator">
 				<li>
-					<a class="icon-arrow_left is-hidden" id="prev-button"></a>
+					<a class="icon-arrow_left" id="prev-button"></a>
 				</li>
 				
 				<li>
-					<a class="icon-play" id="play-button"></a>
+					<a class="icon-pause" id="play-button"></a>
 				</li>
 				
 				<li>
@@ -90,18 +80,34 @@
 			</ul>
 		</div>
 		
-		<a href="#badges" class="icon-arrow_down effect-2 is-hidden js-goto"></a>
+						<ul class="c-social">
+					<li>
+						<a href="#" class="icon-vimeo"></a>
+					</li>
+		
+					<li>
+						<a href="#" class="icon-facebook"></a>
+					</li>
+					
+					<li>
+						<a href="#" class="icon-instagram"></a>
+					</li>
+				</ul>
+
+		
+		<a href="#badges" class="icon-arrow_down effect-2 is-hidden" data-offset="100" id="showThumbs"></a>
 	
 	</div>
 
 
 
 	
-	<div class="c-overlay" id="overlay">
+	<div class="c-overlay moveUp" id="overlay">
+		<div class="c-overlay__container">
 		<div class="c-overlay__main">
 			
 				<a href="#" class="c-logo">
-					<img src="img/malak.svg" alt="malak" class="o-media">
+					<img src="img/florian_malak_logotyp.svg" alt="Florian Malak | The work of director" class="o-media">
 				</a>
 
 			
@@ -133,9 +139,9 @@
 
 			<div class="c-overlay__content">
 				
-				<nav class="c-nav " id="nav" role="navigation">
+				<nav class="c-nav" id="nav">
 					<ul class="c-nav__carousel js-carousel">
-						<li class="c-nav__item carousel-cell is-active">
+						<li class="c-nav__item carousel-cell">
 							<a href="#portfolio" class="c-nav__link gallery-cell">portfolio</a>
 						</li>
 						
@@ -148,7 +154,7 @@
 						</li>
 						
 						<li class="c-nav__item carousel-cell">
-							<a href="#contact-form" class="c-nav__link gallery-cell">contact form</a>
+							<a href="#contact-form" class="c-nav__link gallery-cell">contact</a>
 						</li>
 					</ul>
 				</nav>
@@ -157,50 +163,50 @@
 				<div class="c-content" id="nav-content">					
 					<ul class="c-content__list">
 					
-						<li class="c-content__item effect-1 is-visible">
-							<div class="c-categories is-opened">
+						<li class="c-content__item">
+							<div class="c-categories">
 								<div class="c-categories__list">
 									
-			<ul>
-				<li class="is-active">
-					<label class="c-categories__item">
+			<ul class="c-categories__carousel js-categoryCarousel">
+				<li>
+					<label class="o-category">
 						<input type="checkbox" value="*" class="js-category js-category--all">#all
 					</label>				
 				</li>
 		
 				<li>
-					<label class="c-categories__item">
-						<input type="checkbox" value="fashion" class="js-category">#fashion
+					<label class="o-category">
+						<input type="checkbox" value=".fashion" class="js-category">#fashion
 					</label>
 				</li>
 				
 				<li>
-					<label class="c-categories__item">
-						<input type="checkbox" value="commercial" class="js-category">#commercial
+					<label class="o-category">
+						<input type="checkbox" value=".commercial" class="js-category">#commercial
 					</label>
 				</li>
 				
 				<li>
-					<label class="c-categories__item">
-						<input type="checkbox" value="music" class="js-category">#music
+					<label class="o-category">
+						<input type="checkbox" value=".music" class="js-category">#music
 					</label>
 				</li>
 				
 				<li>
-					<label class="c-categories__item">
-						<input type="checkbox" value="advertising" class="js-category">#advertising
+					<label class="o-category">
+						<input type="checkbox" value=".advertising" class="js-category">#advertising
 					</label>
 				</li>
 				
 				<li>
-					<label class="c-categories__item">
-						<input type="checkbox" value="sport" class="js-category">#sport
+					<label class="o-category">
+						<input type="checkbox" value=".sport" class="js-category">#sport
 					</label>
 				</li>
 				
 				<li>
-					<label class="c-categories__item">
-						<input type="checkbox" value="other" class="js-category">#other
+					<label class="o-category">
+						<input type="checkbox" value=".other" class="js-category">#other
 					</label>
 				</li>				
 			</ul>
@@ -209,7 +215,7 @@
 							</div>
 						</li>
 
-						<li class="c-content__item effect-1">
+						<li class="c-content__item">
 							
 					
 						<ul class="o-list o-list--awards" id="awards">
@@ -257,47 +263,39 @@
 
 						</li>
 
-						<li class="c-content__item effect-1">
+						<li class="c-content__item">
 							
-					<div class="o-typo">
-<p>Film director, photographer and writer. Born in 1982 in Wrocław, Poland. Florian has already 12 years of professional commercial experience working in the advertising business. His ideas, commercials and music videos have won the most important awards in Poland like: KTR, ZŁOTE ORŁY and CYBERYACH. Florian directed numerous televison commercials for the brands like: SAMSUNG, KFC, ORANGE, T-MOBILE, CROPP, PZU, ALLEGRO and more. Right now he is the only young Polish director whose two spots made it to the most prestigious London magazine “SHOTS”. He pioneered “CAMERA SHIFT” and “ROTOFREEZE” visual techniques on the Polish commercial market. Certainly he feels comfortable with any style of commercial, but his speciality are post-production dedicated projects especially music, sport, fashion and lifestyle. Florian is currently developing his first feature film.</p>
-					</div
+							<div class="o-typo">
+		<p>Film director, photographer and writer. Born in 1982 in Wrocław, Poland. Florian has already 12 years of professional commercial experience working in the advertising business. His ideas, commercials and music videos have won the most important awards in Poland like: KTR, ZŁOTE ORŁY and CYBERYACH. Florian directed numerous televison commercials for the brands like: SAMSUNG, KFC, ORANGE, T-MOBILE, CROPP, PZU, ALLEGRO and more. Right now he is the only young Polish director whose two spots made it to the most prestigious London magazine “SHOTS”. He pioneered “CAMERA SHIFT” and “ROTOFREEZE” visual techniques on the Polish commercial market. Certainly he feels comfortable with any style of commercial, but his speciality are post-production dedicated projects especially music, sport, fashion and lifestyle. Florian is currently developing his first feature film.</p>
+							</div>
 
 						</li>
 
-						<li class="c-content__item effect-1">
+						<li class="c-content__item">
 							
 					
-						<form action="#" class="o-form" id="contact-form">
-							<div class="o-form__row">
-								<input type="text" placeholder="Your name">
-							</div>
+						<form action="contact-form.php" method="post" class="o-form" id="contact-form">
+							<fieldset class="o-form__fields">
+								<div class="o-form__row">
+									<input type="text" name="name" placeholder="Your name">
+								</div>
+								
+								<div class="o-form__row">
+									<input type="email" name="email" placeholder="email address" autocomplete="off" required>
+								</div>
+								
+								<div class="o-form__row">
+									<textarea placeholder="msg" name="message"></textarea>
+								</div>
+								
+								<div class="o-form__row">		
+									<button type="submit" class="o-btn"><span>send</span></button>
+								</div>
+							</fieldset>
 							
-							<div class="o-form__row">
-								<input type="email" placeholder="email address" autocomplete="off" required>
-							</div>
-							
-							<div class="o-form__row">
-								<textarea placeholder="msg"></textarea>
-							</div>
-							
-							<div class="o-form__row">
-								<ul class="c-social">
-									<li>
-										<a href="#" class="icon-vimeo"></a>
-									</li>
-						
-									<li>
-										<a href="#" class="icon-facebook"></a>
-									</li>
-									
-									<li>
-										<a href="#" class="icon-instagram"></a>
-									</li>
-								</ul>
-		
-								<button type="submit" class="o-btn"><span>send</span></button>
-							</div>
+							<fieldset class="o-form__thanks is-hidden">
+								Thanks, Mail sent.
+							</fieldset>
 						</form>
 
 
@@ -307,57 +305,74 @@
 
 			</div>
 			
-			<p class="c-author">Design & Development by Skygate</p>
-		</div>
+			<div class="c-footer">
+								<ul class="c-social">
+					<li>
+						<a href="#" class="icon-vimeo"></a>
+					</li>
 		
+					<li>
+						<a href="#" class="icon-facebook"></a>
+					</li>
+					
+					<li>
+						<a href="#" class="icon-instagram"></a>
+					</li>
+				</ul>
+
+				
+				<p class="c-author">Design & Development by Skygate</p>
+			</div>
+		</div>
+		</div>
 		<a class="c-overlay__exit icon-exit js-exit"></a>
 	</div>
 
 
-	<div class="c-categories" id="mainCategories">
+	<div class="c-categories c-categories--home" id="mainCategories">
 		<div class="c-categories__list">
 		
 	
-			<ul>
-				<li class="is-active">
-					<label class="c-categories__item">
+			<ul class="c-categories__carousel js-categoryCarousel">
+				<li>
+					<label class="o-category">
 						<input type="checkbox" value="*" class="js-category js-category--all">#all
 					</label>				
 				</li>
 		
 				<li>
-					<label class="c-categories__item">
-						<input type="checkbox" value="fashion" class="js-category">#fashion
+					<label class="o-category">
+						<input type="checkbox" value=".fashion" class="js-category">#fashion
 					</label>
 				</li>
 				
 				<li>
-					<label class="c-categories__item">
-						<input type="checkbox" value="commercial" class="js-category">#commercial
+					<label class="o-category">
+						<input type="checkbox" value=".commercial" class="js-category">#commercial
 					</label>
 				</li>
 				
 				<li>
-					<label class="c-categories__item">
-						<input type="checkbox" value="music" class="js-category">#music
+					<label class="o-category">
+						<input type="checkbox" value=".music" class="js-category">#music
 					</label>
 				</li>
 				
 				<li>
-					<label class="c-categories__item">
-						<input type="checkbox" value="advertising" class="js-category">#advertising
+					<label class="o-category">
+						<input type="checkbox" value=".advertising" class="js-category">#advertising
 					</label>
 				</li>
 				
 				<li>
-					<label class="c-categories__item">
-						<input type="checkbox" value="sport" class="js-category">#sport
+					<label class="o-category">
+						<input type="checkbox" value=".sport" class="js-category">#sport
 					</label>
 				</li>
 				
 				<li>
-					<label class="c-categories__item">
-						<input type="checkbox" value="other" class="js-category">#other
+					<label class="o-category">
+						<input type="checkbox" value=".other" class="js-category">#other
 					</label>
 				</li>				
 			</ul>
@@ -371,111 +386,188 @@
 	
 	<div class="c-thumbs effect-3">
 	
-		<ul class="effect-2" id="grid">
-			<li class="c-thumbs__item music fashion advertising is-playing" data-src="150163374">
+		<ul class="c-thumbs__list effect-2" id="grid">
+			<li class="c-thumbs__item music fashion advertising animate is-playing" data-src="150163374">
 				<div class="c-thumb">
-					<img src="#" alt="" class="o-media">
+					<a href="#" class="c-thumb__photo js-play">
+						<img src="#" alt="" class="o-media">
+					</a>
+					
 					<div class="c-thumb__info">
-						<p class="c-thumb__title"></p>
-						<p class="c-thumb__categories">
-							<span>#music</span> <span>#fashion</span> <span>#advertising</span>
-						</p>
+						<a href="#" class="c-thumb__title"></a>
+						
+						<div class="c-thumb__categories">
+							<label class="o-category">
+								<input type="checkbox" value=".music" class="js-category">#music
+							</label>
+							
+							<label class="o-category">
+								<input type="checkbox" value=".fashion" class="js-category">#fashion
+							</label>
+							
+							<label class="o-category">
+								<input type="checkbox" value=".advertising" class="js-category">#advertising
+							</label>
+						</div>
 					</div>
 				</div>
 			</li>
 
-			<li class="c-thumbs__item music commercial advertising" data-src="144353463">
+			<li class="c-thumbs__item music commercial advertising animate" data-src="144353463">
 				<div class="c-thumb">
-					<img src="#" alt="" class="o-media">
+					<a href="#" class="c-thumb__photo js-play">
+						<img src="#" alt="" class="o-media">
+					</a>
+					
 					<div class="c-thumb__info">
-						<p class="c-thumb__title"></p>
-						<p class="c-thumb__categories">
-							<span>#music</span> <span>#commercial</span> <span>#advertising</span>
-						</p>
+						<a href="#" class="c-thumb__title"></a>
+						
+						<div class="c-thumb__categories">
+							<label class="o-category">
+								<input type="checkbox" value=".music" class="js-category">#music
+							</label>
+							
+							<label class="o-category">
+								<input type="checkbox" value=".commercial" class="js-category">#commercial
+							</label>
+							
+							<label class="o-category">
+								<input type="checkbox" value=".advertising" class="js-category">#advertising
+							</label>
+						</div>
 					</div>
 				</div>
 			</li>
 
-			<li class="c-thumbs__item music commercial" data-src="140931121">
+			<li class="c-thumbs__item music commercial animate" data-src="140931121">
 				<div class="c-thumb">
-					<img src="#" alt="" class="o-media">
+					<a href="#" class="c-thumb__photo js-play">
+						<img src="#" alt="" class="o-media">
+					</a>
+
 					<div class="c-thumb__info">
-						<p class="c-thumb__title"></p>
-						<p class="c-thumb__categories">
-							<span>#music</span> <span>#commercial</span>
-						</p>
+						<a href="#" class="c-thumb__title"></a>
+						
+						<div class="c-thumb__categories">
+							<label class="o-category">
+								<input type="checkbox" value=".music" class="js-category">#music
+							</label>
+							
+							<label class="o-category">
+								<input type="checkbox" value=".commercial" class="js-category">#commercial
+							</label>
+						</div>
 					</div>
 				</div>
 			</li>
 
-			<li class="c-thumbs__item music" data-src="135687864">
+			<li class="c-thumbs__item music animate" data-src="135687864">
 				<div class="c-thumb">
-					<img src="#" alt="" class="o-media">
+					<a href="#" class="c-thumb__photo js-play">
+						<img src="#" alt="" class="o-media">
+					</a>
+					
 					<div class="c-thumb__info">
-						<p class="c-thumb__title"></p>
-						<p class="c-thumb__categories">
-							<span>#music</span>
-						</p>
+						<a href="#" class="c-thumb__title"></a>
+						
+						<div class="c-thumb__categories">
+							<label class="o-category">
+								<input type="checkbox" value=".music" class="js-category">#music
+							</label>
+						</div>
 					</div>
 				</div>
 			</li>
 
-			<li class="c-thumbs__item music" data-src="154736722">
+			<li class="c-thumbs__item music animate" data-src="154736722">
 				<div class="c-thumb">
-					<img src="#" alt="" class="o-media">
+					<a href="#" class="c-thumb__photo js-play">
+						<img src="#" alt="" class="o-media">
+					</a>
+					
 					<div class="c-thumb__info">
-						<p class="c-thumb__title"></p>
-						<p class="c-thumb__categories">
-							<span>#music</span>
-						</p>
+						<a href="#" class="c-thumb__title"></a>
+						
+						<div class="c-thumb__categories">
+							<label class="o-category">
+								<input type="checkbox" value=".music" class="js-category">#music
+							</label>
+						</div>
 					</div>
 				</div>
 			</li>
 			
-			<li class="c-thumbs__item commercial" data-src="129914216">
+			<li class="c-thumbs__item commercial animate" data-src="129914216">
 				<div class="c-thumb">
-					<img src="#" alt="" class="o-media">
+					<a href="#" class="c-thumb__photo js-play">
+						<img src="#" alt="" class="o-media">
+					</a>
+					
 					<div class="c-thumb__info">
-						<p class="c-thumb__title"></p>
-						<p class="c-thumb__categories">
-							<span>#commercial</span>
-						</p>
+						<a href="#" class="c-thumb__title"></a>
+						
+						<div class="c-thumb__categories">
+							<label class="o-category">
+								<input type="checkbox" value=".commercial" class="js-category">#commercial
+							</label>
+						</div>
 					</div>
 				</div>
 			</li>
 			
-			<li class="c-thumbs__item fashion sport" data-src="124219308">
+			<li class="c-thumbs__item fashion sport animate" data-src="124219308">
 				<div class="c-thumb">
-					<img src="#" alt="" class="o-media">
+					<a href="#" class="c-thumb__photo js-play">
+						<img src="#" alt="" class="o-media">
+					</a>
+					
 					<div class="c-thumb__info">
-						<p class="c-thumb__title"></p>
-						<p class="c-thumb__categories">
-							<span>#fashion</span> <span>#sport</span>
-						</p>
+						<a href="#" class="c-thumb__title"></a>
+						<div class="c-thumb__categories">
+							<label class="o-category">
+								<input type="checkbox" value=".fashion" class="js-category">#fashion
+							</label>
+							
+							<label class="o-category">
+								<input type="checkbox" value=".sport" class="js-category">#sport
+							</label>
+						</div>
 					</div>
 				</div>
 			</li>
-			
-			<li class="c-thumbs__item sport" data-src="119939956">
+			 
+			<li class="c-thumbs__item sport animate" data-src="119939956">
 				<div class="c-thumb">
-					<img src="#" alt="" class="o-media">
+					<a href="#" class="c-thumb__photo js-play">
+						<img src="#" alt="" class="o-media">
+					</a>
+					
 					<div class="c-thumb__info">
-						<p class="c-thumb__title"></p>
-						<p class="c-thumb__categories">
-							<span>#sport</span>
-						</p>
+						<a href="#" class="c-thumb__title"></a>
+						
+						<div class="c-thumb__categories">
+							<label class="o-category">
+								<input type="checkbox" value=".sport" class="js-category">#sport
+							</label>
+						</div>
 					</div>
 				</div>
 			</li>
 
-			<li class="c-thumbs__item other" data-src="128233470">
+			<li class="c-thumbs__item other animate" data-src="128233470">
 				<div class="c-thumb">
-					<img src="#" alt="" class="o-media">
+					<a href="#" class="c-thumb__photo js-play">
+						<img src="#" alt="" class="o-media">
+					</a>
+					
 					<div class="c-thumb__info">
-						<p class="c-thumb__title"></p>
-						<p class="c-thumb__categories">
-							<span>#other</span>
-						</p>
+						<a href="#" class="c-thumb__title"></a>
+						
+						<div class="c-thumb__categories">
+							<label class="o-category">
+								<input type="checkbox" value=".other" class="js-category">#other
+							</label>
+						</div>
 					</div>
 				</div>
 			</li>

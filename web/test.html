@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="UTF-8">
+	<meta name="robots" content="noindex, nofollow">
+	
+	<title>malak</title>	
+	
+	<!--[if lt IE 9]>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <![endif]-->
+	
+	<link href="css/libs.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+</head>
+
+
+<style type="text/css">
+	.c-overla {
+		position: fixed;
+		left: 0; top: 0; z-index: 100;
+		display: none;
+		width: 100px; height: 100px;
+		width: 100%; height: 100%;
+		background-color: red;
+		z-index: 10;
+	}
+</style>
+
+<body>  
+
+	<span id="go">open</span>
+	
+<!-- 	<div class="c-overlay moveUp" id="zzz"></div> -->
+	
+	<div class="c-overlay moveUp" id="overlay">
+		<div class="c-overlay__main">
+			<!-- @include('logo.html')-->
+			
+			<aside class="c-overlay__sidebar" id="sidebar">
+				<!-- @include('addresses.html')-->
+			</aside>
+
+			<div class="c-overlay__content">
+				<!-- @include('nav.html')-->
+				<!-- @include('content.html')-->
+			</div>
+			
+			<p class="c-author">Design & Development by Skygate</p>
+		</div>
+		
+		<a class="c-overlay__exit icon-exit js-exit"></a>
+	</div>
+
+	
+<script src="js/libs.js"></script>
+<script src="js/script.js"></script>
+
+
+</body>
+</html>

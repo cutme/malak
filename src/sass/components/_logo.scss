@@ -4,7 +4,7 @@
 	.c-top & {
 		@extend %middle;
 		left: $padding+px; 
-		width: 110px;		
+		width: 180px;		
 	}
 	
 	.c-overlay & {		
@@ -18,7 +18,7 @@
 			@extend %abs;
 			left: $padding+px; 
 			top: 40px;
-			width: 110px;	
+			width: 140px;	
 		}
 	}
 	
@@ -26,6 +26,12 @@
 		.c-top &,
 		.c-overlay & {	
 			left: 20px;
+		}
+	}
+	
+	@media screen and ( max-width: 320px ) {
+		.c-top & {
+			width: 130px;
 		}
 	}
 }

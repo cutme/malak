@@ -1,13 +1,4 @@
 .c-social {
-
-	.c-badges & {
-		@extend %middle;
-		left: $padding+px;
-	}
-	
-	.o-form {
-		float: left;
-	}
 	
 	li {
 		float: left;
@@ -18,9 +9,19 @@
 		@extend %icon;
 	}
 	
+	.c-badges & {
+		@extend %middle;
+		right: $padding+px;
+	}
+	
+	.c-footer & {
+		@extend %clear;
+		margin-bottom: 30px;
+	}
+	
 	@media screen and ( max-width: $tablet--landscape + px ) {
 		.c-badges & {
-			left: 20px;
+			right: 20px;
 		}
 	}
 }

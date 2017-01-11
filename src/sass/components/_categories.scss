@@ -3,43 +3,50 @@ $categories_width:	1266;
 .c-categories {
 	@extend %clear;
 	position: relative; z-index: 15;
-	max-width: $categories_width+px;
-	margin: 0 auto;
-	padding: 40px 15px;
+	//max-width: $categories_width+px;
+	//margin: 0 auto;
+	text-align: center;
 	
+	&__carousel {
+		
+		/* flickity on by default */
+		
+		.c-categories--home & {
+			&:after {
+				content: 'flickity';
+				display: none;
+				
+				@media screen and ( min-width: 641px ) {
+					/* disable Flickity for large devices */
+					//content: '';
+				}
+			}			
+		}
+	}
+
 	input {
 		display: none;
 	}
-	
+
 	li {
 		@extend %anim;
-		float: left;
-		padding-right: 30px;		
+		display: inline-block;
+		padding-right: 30px;	
 	}
 	
 	.c-overlay & {
 		padding: 0;
+		text-align: left;
 		
 		li {
 			float: none;
+			display: block;
 			margin-bottom: 30px;
 			padding: 0;
 			font-size: em(18);
 		}
 	}
 
-	&__item {
-		display: block;
-		line-height: 1;
-		text-transform: uppercase;
-		color: #AFAFAF;	
-		cursor: pointer;
-
-		&:hover {
-			color: white;
-		}
-	}
-	
 	.icon-arrow_down {
 		@extend %abs;
 		@extend %anim;
@@ -58,10 +65,11 @@ $categories_width:	1266;
 		}
 	}
 	
-	&__list {
-		@extend %anim;
-		height: 45px;
-		overflow: hidden;
+	&--home {
+		background-color: #1a1a1a;
+		margin-bottom: 30px;
+		box-shadow: $c-gray--darkest 0 -1px 0 0, $c-gray--darkest 0 1px 0 0;
+		padding: 24px $padding+px;
 	}
 	
 	&.is-opened {
@@ -70,32 +78,19 @@ $categories_width:	1266;
 			transform: scaleY(-1);
 			line-height: 44px;
 		}
-		
-		.c-categories__list {
-			height: auto;
-			
-			li {
-				animation: opacity .65s ease forwards;
-				opacity: 0;
-			}
-		}
 	}
 
-	.is-active {
-		a, label {
-			color: white;
-		}
-	}
-	
+
 	@media screen and ( max-width: $smartphone--landscape + px) {
-	
+		text-align: left;
+
 		.icon-arrow_down {
-			display: block;
+			display: none;
 		}
 	
-		padding: 0 0 60px 0;
 		
-		&__list {
+		/*
+&__list {
 			body > .c-categories & {
 				position: absolute;
 				left: 20px; top: 0;
@@ -122,5 +117,6 @@ $categories_width:	1266;
 				padding: 15px 40px 15px 20px;
 			}
 		}
+*/
 	}
 }

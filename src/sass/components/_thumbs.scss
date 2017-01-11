@@ -5,13 +5,11 @@ $thumbs__width:	1266;
 	position: relative;
 	max-width: $thumbs__width+px;
 	margin: 0 auto;
-
-	&__item {
-
-		.anim & {
-			opacity: 0;
-		}
+	min-height: 400px;
 	
+	&__list {
+		display: flex;
+		flex-wrap: wrap;
 	}
 	
 	@media screen and ( min-width: $smartphone--landscape + 1 + px ) {
@@ -39,5 +37,4 @@ $thumbs__width:	1266;
 			width: 100%;
 		}
 	}
-	
 }

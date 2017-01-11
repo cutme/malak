@@ -1,0 +1,23 @@
+.o-category {
+	display: inline-block;
+	line-height: 1;
+	text-transform: uppercase;
+	color: #AFAFAF;
+	cursor: pointer;
+	
+	.c-thumbs__item & {
+		color: #888;
+	}
+
+	&:hover {
+		color: white;
+	}
+	
+	&.is-active {
+		color: white;
+	}
+	
+	input[type=checkbox] {
+		display: none;
+	}
+}

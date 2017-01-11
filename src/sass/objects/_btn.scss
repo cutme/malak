@@ -1,5 +1,5 @@
 .o-btn {
-	@extend %anim;
+	//@extend %anim;
 	position: relative;
 	border: 1px solid rgba(white, .2);
 	padding: 10px 40px;
@@ -7,8 +7,13 @@
 	font-size: em(14);
 	cursor: pointer;
 	
+	&:hover {
+		background-color: white;
+		color: black;
+	}
 
-	&:after,
+	/*
+&:after,
 	&:before {
 		@extend %abs-after;
 		@extend %anim;
@@ -29,8 +34,9 @@
 	&:hover {
 		&:after,
 		&:before {
-			height: 50%;
+			height: 51%;
 		}
 		color: black;
 	}
+*/
 }

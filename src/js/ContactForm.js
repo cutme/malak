@@ -5,14 +5,15 @@
 	
 	ContactForm.prototype.init = function() {
 		this.enable();
-		this.ajax();
+		//this.ajax();
 	};
 	
 	ContactForm.prototype.ajax = function() {
-		var $$ = $(this),
-			formAction = $$.attr('action'),
-			formType = $$.attr('post'),
-			$form = $(document.getElementById('contact-form'));
+		var $form = $(document.getElementById('contact-form')),
+			formAction = $form.attr('action'),
+			formType = $form.attr('post'),
+			fields = $('.o-form__fields'),
+			thanks = $('.o-form__thanks');
 
 		$.ajax({
 			cache: false,
@@ -21,7 +22,8 @@
 			data: $form.serialize(),
 			success: function(data, statusText, jqXHR) {
 				if (statusText == 'success') {
-			
+					thanks.removeClass('is-hidden');
+					fields.addClass('is-hidden');
 				}
 			}, error: function(result) {
 				console.log('error: ' + result.status + ' ' + result.statusText);
@@ -41,12 +43,12 @@
 			}
 		};
 		
-		$(form).parsley(options); 
+		$(form).parsley(options);
+		form.reset();
 		
-		window.Parsley.on('form:submit', function() {
-			alert('great!');
+		window.Parsley.on('form:submit', function() {			
+			ContactForm.prototype.ajax();
 			return false; 
-			
 		});
 	};
 	

@@ -1,34 +1,26 @@
 
 					
-						<form action="#" class="o-form" id="contact-form">
-							<div class="o-form__row">
-								<input type="text" placeholder="Your name">
-							</div>
+						<form action="contact-form.php" method="post" class="o-form" id="contact-form">
+							<fieldset class="o-form__fields">
+								<div class="o-form__row">
+									<input type="text" name="name" placeholder="Your name">
+								</div>
+								
+								<div class="o-form__row">
+									<input type="email" name="email" placeholder="email address" autocomplete="off" required>
+								</div>
+								
+								<div class="o-form__row">
+									<textarea placeholder="msg" name="message"></textarea>
+								</div>
+								
+								<div class="o-form__row">		
+									<button type="submit" class="o-btn"><span>send</span></button>
+								</div>
+							</fieldset>
 							
-							<div class="o-form__row">
-								<input type="email" placeholder="email address" autocomplete="off" required>
-							</div>
-							
-							<div class="o-form__row">
-								<textarea placeholder="msg"></textarea>
-							</div>
-							
-							<div class="o-form__row">
-								<ul class="c-social">
-									<li>
-										<a href="#" class="icon-vimeo"></a>
-									</li>
-						
-									<li>
-										<a href="#" class="icon-facebook"></a>
-									</li>
-									
-									<li>
-										<a href="#" class="icon-instagram"></a>
-									</li>
-								</ul>
-		
-								<button type="submit" class="o-btn"><span>send</span></button>
-							</div>
+							<fieldset class="o-form__thanks is-hidden">
+								Thanks, Mail sent.
+							</fieldset>
 						</form>
 

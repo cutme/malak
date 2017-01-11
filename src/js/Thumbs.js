@@ -9,8 +9,9 @@
 	};
 	
 	Thumbs.prototype.events = function() {
-		$(document).on('click', '.c-thumbs__item', function() {
-			malak.thumbs.showVideo(this);
+		$('.c-thumbs__item').on('click', '.js-play', function(e) {
+			e.preventDefault();
+			malak.thumbs.showVideo($(this).parents('.c-thumbs__item'));
 		});
 		
 		window.addEventListener('resize', function(e) {
@@ -18,10 +19,21 @@
 				malak.thumbs.reset();
 			}
 		});
-	}
+	};
 
 	Thumbs.prototype.enable = function() {
 		var thumbLoaded = 0;
+		
+		function showThumbs() {
+			var button = document.getElementById('showThumbs');
+			
+			button.addEventListener('click', function(e) {
+				e.preventDefault();
+				$('body').removeClass('no-scroll');
+				malak.helper.goToTarget($(this).attr('href'), 100);
+			});
+		}
+		
 		$('.c-thumbs__item').each(function() {
 			var $$ = $(this),
 				vimeoVideoID = $$.data('src'), videoTitle = $('.c-thumb__title', this), videoThumb = $('.o-media', this);
@@ -35,33 +47,22 @@
 			});
 			
 			// Check if images for grid loaded
-			videoThumb.bind('load', function(e) {
+			/*
+videoThumb.bind('load', function(e) {
 				thumbLoaded ++;
 				
 				if (thumbLoaded == $('.c-thumbs__item').length) {
 					
 					// if thumbnails loaded, show arrow and lets scroll the page
 					$('body').removeClass('no-scroll');
-					$('.c-badges .icon-arrow_down').removeClass('is-hidden').css('opacity', 0).animate({ opacity: 1 });
-					
-					// initialize Masonry
-					$('#grid').multipleFilterMasonry({
-						itemSelector: '.c-thumbs__item',
-						filtersGroupSelector:'.c-categories'
-					});
-					
-					// initialize AnimOnScroll
-					new AnimOnScroll( document.getElementById( 'grid' ), {
-						minDuration : 0.4,
-						maxDuration : 0.7,
-						viewportFactor : 0.2
-					} );
-
-					// initialize inView
-					$('.c-thumbs_item').on('inview');				
+					$('.c-badges .icon-arrow_down').removeClass('is-hidden').css('opacity', 0).animate({ opacity: 1 });			
 				}					
 			});
+*/
 		});
+		
+		showThumbs();
+		
 	};
 	
 	Thumbs.prototype.reset = function() {
@@ -71,17 +72,16 @@
 			$(thumbVideo).remove();
 			$('.c-thumbs__item.is-active .c-thumb').show();
 			$('.c-thumbs__item.is-active').removeClass('is-active');
-			malak.helper.animOnScroll();
 		}
-	}
+	};
 	
 	Thumbs.prototype.showVideo = function(o) {
-		var $$ = $(o),
+		var $$ = o,
 			body = document.getElementsByTagName('body'),
-			vId = $$.data('src'),
-			playButton = document.getElementById('play-button');				
+			vId = $$.data('src');
+			
 		
-		function loadThumbVideo() {
+		function loadMobileVideo() {
 			var grid = document.getElementById('grid'),
 				$thumb = $('.c-thumb', o),
 				thumbVideo = document.getElementById('thumbVideo');	
@@ -102,40 +102,62 @@
 			}).prependTo(o);
 			
 			var iframe = document.getElementById('thumbVideo'),
-				player = $f('#thumbVideo'),
 				ww = window.innerWidth,
 				wwResize = window.addEventListener('resize', function(e) {
 					ww = window.innerWidth;
 					$(iframe).css('width', ww);
 				});
-				
-			// When the player is ready/loaded, add a finish event listener
-			player.addEvent('ready', function() {
-				//Adds an event 'finish' that executes a function 'onFinish' when the video has ended.
-				alert('f');
-				player.addEvent('finish', onFinish);
-			});
-			
-			//Define the onFinish function that will be called
-			function onFinish(id) {
-				alert('THE VIDEO HAS FINISHED PLAYING');
-			}
-			
+
 			$thumb.hide();
-			$(iframe).css('width', ww);
-			
-			iframe.addEventListener('load', function(e) {
-				malak.helper.animOnScroll();
-			});	
+			$(iframe).css('width', ww);	
 		}
 
-		function loadBigVideo() {
-			var player = $('#vimelar-player'),
-				src = '//player.vimeo.com/video/'+vId+'?portrait=0&badge=0&byline=0&title=0&hd_off=1&api=1';
+		function loadDesktopVideo() {
+		
+			$('#vid').addClass('is-loading');
+			$('#vimelar-container').remove();
+			$('#vid').vimelar({ videoId: vId });
 			
-			player.fadeOut(500, function() { $(this).attr('src', src); });
-			$('.c-player').addClass('is-loading');
-			$(playButton).removeClass('icon-pause').addClass('icon-play');
+			var iframe = document.getElementById('vimelar-player'),
+				player = new Vimeo.Player(iframe),
+				playButton = document.getElementById('play-button'),
+				playerTouch = document.getElementById('playerTouch'),
+			PlayStop = function() {
+				$(this).toggleClass('icon-play icon-pause');
+				$(this).hasClass('icon-pause') ? player.play() : player.pause();
+			},
+			onEnded = function() {
+				console.log('end');
+			},
+			onPlay = function() {
+				$(playButton).removeClass('icon-play').addClass('icon-pause');
+				$('i', playerTouch).removeClass('is-visible');
+			},
+			onPause = function() {
+				$(playButton).addClass('icon-play').removeClass('icon-pause');
+		        $('i', playerTouch).addClass('is-visible');
+			},
+			onTouch = function() {
+				$('i', this).toggleClass('is-visible');
+				$('i', this).hasClass('is-visible') ? player.pause() : player.play();
+			};
+			
+			$('i', playerTouch).removeClass('is-visible');
+			
+			player.on('play', onPlay);
+			player.on('pause', onPause);
+			player.on('ended', onEnded);
+			
+			$(iframe).fadeOut(0);
+			
+			iframe.addEventListener('load', function(e) {	
+				$(iframe).fadeIn(1000);
+				$('#vid').removeClass('is-loading');
+			});
+					
+			$(playButton).unbind('click').on('click', PlayStop);
+			$(playerTouch).unbind('click').on('click', onTouch);
+
 		}
 		
 		if (malak.helper.isWindowSmallerThan(641) === false) {		
@@ -145,15 +167,15 @@
 				}, {
 					duration: 1000,
 					easing: 'easeOutCubic',
-					complete: loadBigVideo
+					complete: loadDesktopVideo
 				});
 			} else {
-				loadBigVideo();
+				loadDesktopVideo();
 			}
 		} else {
-			loadThumbVideo();
+			loadMobileVideo();
 		}
-	}
+	};
 
 	malak.thumbs = new Thumbs();
 	

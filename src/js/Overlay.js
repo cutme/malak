@@ -7,7 +7,7 @@
 
 	Overlay.prototype.init = function() {
 		this.events();
-		//this.mobile();
+		this.mobile();
 	};
 	
 	
@@ -66,12 +66,16 @@
 		$(document.getElementById('mainCategories')).removeClass('is-opened');
 		$(document.getElementById('overlay')).removeClass('is-visible');
 		$(document.getElementsByTagName('body')).removeClass('no-scroll');
+		$('.o-form__fields').removeClass('is-hidden');
+		$('.o-form__thanks').addClass('is-hidden');
 		malak.contactForm.destroy();
-		
+
 		var flky = new Flickity( '.js-carousel' );
 		flky.destroy();
 	};
 	
+	
+
 	Overlay.prototype.enable = function() {
 
 		var body = document.getElementsByTagName('body'),
@@ -81,7 +85,7 @@
 
 		$(body).addClass('no-scroll');
 		$(overlay).addClass('is-visible');
-		
+
 		function enableFlickity() {
 			flky = new Flickity( '.js-carousel', {
 				cellAlign: 'left',
@@ -91,8 +95,8 @@
 				pageDots: false,
 				watchCSS: true
 			});
-		}		
-			
+		}
+
 		if (malak.helper.isWindowSmallerThan(1025) === true) {
 			enableFlickity();
 			flky.resize();
@@ -100,6 +104,8 @@
 		
 		malak.contactForm.init();
 	};
+	
+	malak.overlay = new Overlay();
 
 }(window, document, jQuery, window.malak = window.malak || {}));
 
