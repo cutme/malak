@@ -38,10 +38,11 @@
 		             // IE Fallback, you can even fallback to onscroll
 		             function(callback){ window.setTimeout(callback, 1000/60); };
 		
-		function loop(){
+		function loop() {
 		
 		    var top = window.pageYOffset,
-		    	bottomOfWindow = $(window).scrollTop() + window.innerHeight;
+		    	bottomOfWindow = $(window).scrollTop() + window.innerHeight,
+		    	windowWidth = window.innerWidth;
 		    
 		    // Avoid calculations if not needed
 		    if (lastPosition == window.pageYOffset) {
@@ -50,13 +51,19 @@
 		    } else lastPosition = window.pageYOffset;
 			
 			$('.animate').each(function() {
+				
 				if ( $(this).offset().top < bottomOfWindow ) {
-					var $$ = $(this),
-						rand = Math.round(Math.random() * (500)) + 500;
+					var $$ = $(this);
 					
-					setTimeout(function() {
+					if (windowWidth > 640) {
+						var rand = Math.round(Math.random() * (500)) + 500;
+						
+						setTimeout(function() {
+							$$.addClass('is-visible');
+						}, rand);
+					} else {
 						$$.addClass('is-visible');
-					}, rand);
+					}
 				}
 			});
 			

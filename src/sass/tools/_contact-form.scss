@@ -1,0 +1,75 @@
+.wpcf7-form {
+	max-width: 375px;
+	
+	input[type=text], input[type=email], textarea {
+		border: 1px solid rgba(white, .2);
+		padding: 10px 20px;
+	}
+	
+	textarea {
+		height: 160px;
+	}
+
+	> p {
+		@extend %clear;
+	}
+	
+	> p label {
+		
+		display: block;
+		position: relative; z-index: 5;
+		margin-bottom: 20px;
+		
+		&.up-index {
+			z-index: 10 !important;
+		}
+	}
+	
+	.o-btn {
+		float: right;
+		width: auto;
+	}
+	
+	.wpcf7-not-valid-tip {
+		transform: translateY(20px);
+		opacity: 1;
+		//animation: moveUp 0.65s ease forwards;
+		position: absolute;
+		top: 25px; z-index: 10;
+		background-color: white;
+		letter-spacing: 1px;
+		padding: 10px 15px;
+		color: black;
+
+		&:before {
+			@extend %abs-after;
+			left: 10px; top: -11px;
+		    display: inline-block;
+		    width: 0;
+		    height: 0;
+		    border-style: solid;
+		    border-width: 0 12px 12px 12px;
+		    border-color: transparent transparent white transparent;
+		}
+	}
+	
+	.wpcf7-response-output {
+		border: none !important;
+		padding: 0 !important;
+	}
+}
+
+.wpcf7 .ajax-loader {
+	display: block !important;
+	width: 26px !important;
+	height: 26px !important;
+	background: {
+		image: url(../img/ring.svg) !important;
+		size: cover;
+	}
+}
+
+
+.screen-reader-response {
+	display: none !important;
+}

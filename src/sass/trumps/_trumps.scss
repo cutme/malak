@@ -24,7 +24,9 @@ opacity: 0;
 }
 
 .no-scroll {
-	overflow: hidden;
+	@media screen and ( min-width: 641px ) {
+		overflow: hidden;
+	}	
 }
 
 .safari {

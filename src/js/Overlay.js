@@ -15,7 +15,7 @@
 	Overlay.prototype.mobile = function() {
 		var addresses = document.getElementById('addresses'), 
 			categoriesHome = document.getElementById('categories'),
-			contactform = document.getElementById('contact-form'), 
+			contactform = document.getElementById('wpcf7-f27-o1'), 
 			sidebar = document.getElementById('sidebar'), status = false;
 		
 		function moveContact() {

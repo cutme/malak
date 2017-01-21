@@ -5,7 +5,7 @@
 	
 	Player.prototype.init = function() {
 		this.enable();
-		this.buttons();
+		//this.buttons();
 	};
 
 	
@@ -62,9 +62,7 @@
 	};
 
 	Player.prototype.enable = function() {
-		var firstThumbVideo = ($('.c-thumbs__item').eq(0));			
-					
-		//$('#vid').vimelar({ videoId: firstThumbVideo });
+		var firstThumbVideo = $('.c-thumbs__item').eq(0);			
 		
 		malak.thumbs.showVideo(firstThumbVideo);
 		

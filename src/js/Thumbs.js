@@ -150,7 +150,8 @@ videoThumb.bind('load', function(e) {
 			
 			$(iframe).fadeOut(0);
 			
-			iframe.addEventListener('load', function(e) {	
+			iframe.addEventListener('load', function(e) {
+				malak.player.buttons();
 				$(iframe).fadeIn(1000);
 				$('#vid').removeClass('is-loading');
 			});

@@ -4,7 +4,7 @@
 	var ContactForm = malak.ContactForm = function () { };
 	
 	ContactForm.prototype.init = function() {
-		this.enable();
+		//this.enable();
 		//this.ajax();
 	};
 	
@@ -31,6 +31,7 @@
 		});
 	};
 
+	/*
 	ContactForm.prototype.enable = function() {
 		var form = document.getElementById('contact-form');
 		
@@ -51,9 +52,10 @@
 			return false; 
 		});
 	};
+*/
 	
 	ContactForm.prototype.destroy = function() {
-		$('#contact-form').parsley().destroy();	
+		//$('#contact-form').parsley().destroy();	
 	};
 	
 	malak.contactForm = new ContactForm();
