@@ -24,7 +24,18 @@
 				malak.helper.goToTarget($(this).attr('href'));
 			}
 			
-		});		
+		});
+		
+		$(document).on('click', '.js-logo', function(e) {
+			e.preventDefault();
+			
+			var grid = document.getElementById('grid'),
+				gridItem = $('.c-thumbs__item', grid);
+
+			malak.thumbs.showVideo(gridItem.eq(0));
+			malak.currentVideo = 0;
+		});
+
 		
 		malak.helper.isInView();
 	});

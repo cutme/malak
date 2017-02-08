@@ -1,7 +1,8 @@
 (function(window, document, $, malak, undefined) {
 	'use strict';
 	
-	var Thumbs = malak.Thumbs = function () { };
+	var Thumbs = malak.Thumbs = function () { },
+		start = true;
 	
 	Thumbs.prototype.init = function() {
 		this.enable();
@@ -11,7 +12,10 @@
 	Thumbs.prototype.events = function() {
 		$('.c-thumbs__item').on('click', '.js-play', function(e) {
 			e.preventDefault();
-			malak.thumbs.showVideo($(this).parents('.c-thumbs__item'));
+			var $$ = $(this).parents('.c-thumbs__item');
+			
+			malak.thumbs.showVideo($$);
+			malak.currentVideo = $$.index();
 		});
 		
 		window.addEventListener('resize', function(e) {
@@ -29,7 +33,7 @@
 			
 			button.addEventListener('click', function(e) {
 				e.preventDefault();
-				$('body').removeClass('no-scroll');
+//				$('body').removeClass('no-scroll');
 				malak.helper.goToTarget($(this).attr('href'), 100);
 			});
 		}
@@ -79,7 +83,7 @@ videoThumb.bind('load', function(e) {
 		var $$ = o,
 			body = document.getElementsByTagName('body'),
 			vId = $$.data('src');
-			
+
 		
 		function loadMobileVideo() {
 			var grid = document.getElementById('grid'),
@@ -122,6 +126,7 @@ videoThumb.bind('load', function(e) {
 				player = new Vimeo.Player(iframe),
 				playButton = document.getElementById('play-button'),
 				playerTouch = document.getElementById('playerTouch'),
+				soundButton = document.getElementById('play-sound'),
 			PlayStop = function() {
 				$(this).toggleClass('icon-play icon-pause');
 				$(this).hasClass('icon-pause') ? player.play() : player.pause();
@@ -140,6 +145,15 @@ videoThumb.bind('load', function(e) {
 			onTouch = function() {
 				$('i', this).toggleClass('is-visible');
 				$('i', this).hasClass('is-visible') ? player.pause() : player.play();
+			},
+			sound = function() {
+				if ($(this).hasClass('start')) {
+					$(this).removeClass('no-sound start');
+					player.setVolume(1);
+				} else {
+					$(this).toggleClass('no-sound');
+					$(this).hasClass('no-sound') ? player.setVolume(0) : player.setVolume(1);
+				}
 			};
 			
 			$('i', playerTouch).removeClass('is-visible');
@@ -148,17 +162,29 @@ videoThumb.bind('load', function(e) {
 			player.on('pause', onPause);
 			player.on('ended', onEnded);
 			
-			$(iframe).fadeOut(0);
+			$(iframe).fadeOut(0);			
 			
-			iframe.addEventListener('load', function(e) {
-				malak.player.buttons();
+			function loaded() {				
+				$(soundButton).removeClass('no-sound');				
+
 				$(iframe).fadeIn(1000);
 				$('#vid').removeClass('is-loading');
-			});
+			}
+			
+			iframe.addEventListener('load', loaded);
 					
 			$(playButton).unbind('click').on('click', PlayStop);
 			$(playerTouch).unbind('click').on('click', onTouch);
-
+			$(soundButton).unbind('click').on('click', sound);
+			
+			
+			// No music on start
+			
+			if (start === true) {
+				$(soundButton).addClass('no-sound start');	
+				player.setVolume(0);
+				start = false;
+			}
 		}
 		
 		if (malak.helper.isWindowSmallerThan(641) === false) {		

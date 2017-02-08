@@ -1,4 +1,5 @@
 .o-category {
+	@extend %anim;
 	display: inline-block;
 	line-height: 1;
 	text-transform: uppercase;

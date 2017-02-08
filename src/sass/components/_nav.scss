@@ -2,7 +2,8 @@
 	width: 425px;
 	
 	&__link {
-		//@extend %animfix;
+		@extend %animfix;
+		@extend %anim;
 		opacity: .5;
 		text-transform: uppercase;
 		font-size: em(26);	

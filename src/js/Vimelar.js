@@ -38,7 +38,8 @@
         $node.css({position: 'relative', 'z-index': opts.wrapperZIndex});
 
         // resize handler updates width, height and offset of player after resize/init
-        var resize = function() {
+       /*
+ var resize = function() {
             var width = $(window).width(),
                 pWidth, // player width, to be defined
                 height = $(window).height() - 200,
@@ -64,6 +65,7 @@
         $(window).on('resize.vimelar', function() {
             resize();
         });
+*/
 
     };
 

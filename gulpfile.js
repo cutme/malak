@@ -20,6 +20,7 @@ var gulp         = require('gulp'),
     merge        = require('merge-stream'),
     fileinclude  = require('gulp-file-include'),
     autoprefixer = require('gulp-autoprefixer'),
+    gcmq         = require('gulp-group-css-media-queries'),
     livereload   = require('gulp-livereload'),
     browserSync  = require('browser-sync').create();
 
@@ -85,6 +86,7 @@ gulp.task('sass', function()
             add: true,
             remove: false
         }))
+      .pipe(gcmq())
       .pipe(cssmin())
       .pipe(gulp.dest('web/css/'))
       .pipe(browserSync.stream());

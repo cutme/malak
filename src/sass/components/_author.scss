@@ -1,9 +1,15 @@
 .c-author {
 	font-size: em(12);
 	letter-spacing: 1px;
-	color: #454545;	
-	
-	
+
+	a {
+		@extend %anim;
+		color: #454545;	
+		
+		&:hover {
+			color: white;
+		}
+	}
 }
 
 .c-footer {
